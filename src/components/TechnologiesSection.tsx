@@ -3,20 +3,16 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
-  Php, 
-  Javascript, 
-  Postgresql, 
-  Swift, 
-  Typescript, 
-  Python, 
-  Java, 
-  Ruby, 
+  Code, 
+  FileCode, 
   Database, 
-  Cloud, 
+  CloudCog, 
+  Smartphone, 
+  Terminal, 
+  SquareCode, 
   Server, 
   Laptop, 
-  Code, 
-  ReactJs as ReactIcon 
+  Braces
 } from "lucide-react";
 
 const TechnologiesSection = () => {
@@ -27,17 +23,17 @@ const TechnologiesSection = () => {
       id: "web",
       name: "Web Platform",
       technologies: [
-        { name: "PHP", icon: <Php className="w-12 h-12" /> },
-        { name: "JavaScript", icon: <Javascript className="w-12 h-12" /> },
-        { name: "TypeScript", icon: <Typescript className="w-12 h-12" /> },
-        { name: "React JS", icon: <ReactIcon className="w-12 h-12" /> },
+        { name: "PHP", icon: <Code className="w-12 h-12" /> },
+        { name: "JavaScript", icon: <FileCode className="w-12 h-12" /> },
+        { name: "TypeScript", icon: <Braces className="w-12 h-12" /> },
+        { name: "React JS", icon: <SquareCode className="w-12 h-12" /> },
       ],
     },
     {
       id: "databases",
       name: "Databases",
       technologies: [
-        { name: "PostgreSQL", icon: <Postgresql className="w-12 h-12" /> },
+        { name: "PostgreSQL", icon: <Database className="w-12 h-12" /> },
         { name: "Database", icon: <Database className="w-12 h-12" /> },
       ],
     },
@@ -45,7 +41,7 @@ const TechnologiesSection = () => {
       id: "cloud",
       name: "Cloud & DevOps",
       technologies: [
-        { name: "Cloud", icon: <Cloud className="w-12 h-12" /> },
+        { name: "Cloud", icon: <CloudCog className="w-12 h-12" /> },
         { name: "Server", icon: <Server className="w-12 h-12" /> },
       ],
     },
@@ -53,17 +49,17 @@ const TechnologiesSection = () => {
       id: "mobile",
       name: "Mobile Apps",
       technologies: [
-        { name: "Swift", icon: <Swift className="w-12 h-12" /> },
-        { name: "Java", icon: <Java className="w-12 h-12" /> },
+        { name: "Swift", icon: <Smartphone className="w-12 h-12" /> },
+        { name: "Java", icon: <Terminal className="w-12 h-12" /> },
       ],
     },
     {
       id: "other",
       name: "Other Frameworks",
       technologies: [
-        { name: "Python", icon: <Python className="w-12 h-12" /> },
-        { name: "Ruby", icon: <Ruby className="w-12 h-12" /> },
-        { name: "Laravel", icon: <Code className="w-12 h-12" /> },
+        { name: "Python", icon: <Terminal className="w-12 h-12" /> },
+        { name: "Ruby", icon: <Code className="w-12 h-12" /> },
+        { name: "Laravel", icon: <SquareCode className="w-12 h-12" /> },
       ],
     },
   ];
