@@ -1,13 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { 
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from "@/components/ui/accordion";
-import { services, company, fields, products } from "./NavbarData";
 
 interface NavbarMobileMenuProps {
   isMenuOpen: boolean;
@@ -27,74 +20,20 @@ const NavbarMobileMenu = ({ isMenuOpen, setIsMenuOpen }: NavbarMobileMenuProps) 
         >
           Home
         </Link>
-        
-        <Accordion type="single" collapsible>
-          <AccordionItem value="company">
-            <AccordionTrigger className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition py-0">
-              Company
-            </AccordionTrigger>
-            <AccordionContent>
-              <div className="pl-4 flex flex-col space-y-2 mt-2">
-                {company.map((item, index) => (
-                  <Link
-                    key={`mobile-company-${index}`}
-                    to={item.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="services">
-            <AccordionTrigger className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition py-0">
-              Services
-            </AccordionTrigger>
-            <AccordionContent>
-              <div className="pl-4 flex flex-col space-y-2 mt-2">
-                <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">Services</p>
-                {services.map((item, index) => (
-                  <Link
-                    key={`mobile-service-${index}`}
-                    to={item.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-                
-                <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-4">Our Fields</p>
-                {fields.map((item, index) => (
-                  <Link
-                    key={`mobile-field-${index}`}
-                    to={item.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-                
-                <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-4">Products</p>
-                {products.map((item, index) => (
-                  <Link
-                    key={`mobile-product-${index}`}
-                    to={item.href}
-                    className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-        
+        <Link
+          to="/services"
+          className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Services
+        </Link>
+        <Link
+          to="/about"
+          className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          About Us
+        </Link>
         <Link
           to="/portfolio"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
@@ -102,7 +41,6 @@ const NavbarMobileMenu = ({ isMenuOpen, setIsMenuOpen }: NavbarMobileMenuProps) 
         >
           Portfolio
         </Link>
-        
         <Link
           to="/testimonials"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
@@ -110,7 +48,13 @@ const NavbarMobileMenu = ({ isMenuOpen, setIsMenuOpen }: NavbarMobileMenuProps) 
         >
           Testimonials
         </Link>
-        
+        <Link
+          to="/team"
+          className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Team
+        </Link>
         <Link
           to="/contact"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
@@ -118,10 +62,7 @@ const NavbarMobileMenu = ({ isMenuOpen, setIsMenuOpen }: NavbarMobileMenuProps) 
         >
           Contact
         </Link>
-        
-        <Button className="w-full" onClick={() => setIsMenuOpen(false)}>
-          Get Started
-        </Button>
+        <Button className="w-full">Get Started</Button>
       </nav>
     </div>
   );
