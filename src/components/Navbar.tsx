@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import NavbarDesktopMenu from "./navbar/NavbarDesktopMenu";
 import NavbarMobileMenu from "./navbar/NavbarMobileMenu";
 import { services, company } from "./navbar/NavbarData";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,9 +36,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="/" className="text-2xl font-bold text-primary">
+            <Link to="/" className="text-2xl font-bold text-primary">
               Glow<span className="text-accent">Tech</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}

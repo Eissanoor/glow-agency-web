@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface NavbarMobileMenuProps {
   isMenuOpen: boolean;
@@ -12,55 +13,55 @@ const NavbarMobileMenu = ({ isMenuOpen, setIsMenuOpen }: NavbarMobileMenuProps) 
   return (
     <div className="md:hidden mt-4 py-4 border-t border-gray-100 dark:border-gray-800">
       <nav className="flex flex-col space-y-4">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
           Home
-        </a>
-        <a
-          href="/services"
+        </Link>
+        <Link
+          to="/services"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
           Services
-        </a>
-        <a
-          href="/about"
+        </Link>
+        <Link
+          to="/about"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
           About Us
-        </a>
-        <a
-          href="/portfolio"
+        </Link>
+        <Link
+          to="/portfolio"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
           Portfolio
-        </a>
-        <a
-          href="/testimonials"
+        </Link>
+        <Link
+          to="/testimonials"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
           Testimonials
-        </a>
-        <a
-          href="/team"
+        </Link>
+        <Link
+          to="/team"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
           Team
-        </a>
-        <a
-          href="/contact"
+        </Link>
+        <Link
+          to="/contact"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
           Contact
-        </a>
+        </Link>
         <Button className="w-full">Get Started</Button>
       </nav>
     </div>

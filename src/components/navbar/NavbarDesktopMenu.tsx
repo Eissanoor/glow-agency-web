@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import NavbarListItem from "./NavbarListItem";
+import { Link } from "react-router-dom";
 
 interface MenuItemData {
   title: string;
@@ -27,9 +28,9 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <a href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <Link to="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
               Home
-            </a>
+            </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
@@ -65,21 +66,21 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="/portfolio" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <Link to="/portfolio" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
               Portfolio
-            </a>
+            </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="/testimonials" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <Link to="/testimonials" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
               Testimonials
-            </a>
+            </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="/contact" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <Link to="/contact" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
               Contact
-            </a>
+            </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
