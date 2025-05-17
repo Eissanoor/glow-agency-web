@@ -76,3 +76,85 @@ export const company: MenuItem[] = [
     description: "Get in touch with our team"
   }
 ];
+
+// Fields data
+export const fields: MenuItem[] = [
+  {
+    title: "Healthcare",
+    href: "/fields/healthcare",
+    description: "Digital solutions for healthcare providers"
+  },
+  {
+    title: "Banks",
+    href: "/fields/banks",
+    description: "Secure banking and financial technologies"
+  },
+  {
+    title: "Logistics",
+    href: "/fields/logistics",
+    description: "Supply chain and logistics management systems"
+  },
+  {
+    title: "Supermarkets",
+    href: "/fields/supermarkets",
+    description: "Retail management and inventory solutions"
+  },
+  {
+    title: "Industries",
+    href: "/fields/industries",
+    description: "Industrial automation and management systems"
+  },
+  {
+    title: "Hotels",
+    href: "/fields/hotels",
+    description: "Hospitality management solutions"
+  },
+  {
+    title: "Fintech",
+    href: "/fields/fintech",
+    description: "Financial technology innovations"
+  }
+];
+
+// Products data
+export const products: MenuItem[] = [
+  {
+    title: "Case Studies",
+    href: "/case-studies",
+    description: "Success stories from our clients"
+  },
+  {
+    title: "Our Pricing",
+    href: "/pricing",
+    description: "Transparent and competitive pricing models"
+  },
+  {
+    title: "Features",
+    href: "/features",
+    description: "Explore our product capabilities"
+  },
+  {
+    title: "Overview",
+    href: "/overview",
+    description: "General overview of our solutions"
+  },
+  {
+    title: "New Releases",
+    href: "/releases",
+    description: "Latest updates and new features"
+  },
+  {
+    title: "Solutions",
+    href: "/solutions",
+    description: "Business solutions for various industries"
+  }
+];
+
+// Featured Case Study
+export const featuredCase = {
+  title: "Astarte Medical",
+  category: "Computer Software",
+  href: "/case-studies/astarte",
+  image: "/placeholder.svg",
+  ctaText: "Read Case"
+};
