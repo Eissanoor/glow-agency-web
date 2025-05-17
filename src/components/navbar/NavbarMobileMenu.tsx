@@ -13,42 +13,42 @@ const NavbarMobileMenu = ({ isMenuOpen, setIsMenuOpen }: NavbarMobileMenuProps) 
     <div className="md:hidden mt-4 py-4 border-t border-gray-100 dark:border-gray-800">
       <nav className="flex flex-col space-y-4">
         <a
-          href="#"
+          href="/"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
           Home
         </a>
         <a
-          href="#services"
+          href="/services"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
           Services
         </a>
         <a
-          href="#about"
+          href="/about"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
-          Company
+          About Us
         </a>
         <a
-          href="#portfolio"
+          href="/portfolio"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
           Portfolio
         </a>
         <a
-          href="#testimonials"
+          href="/team"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
-          Testimonials
+          Team
         </a>
         <a
-          href="#contact"
+          href="/contact"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}
         >
