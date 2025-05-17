@@ -28,7 +28,7 @@ const HeroSection = () => {
                 <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs">KL</div>
                 <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs">MN</div>
               </div>
-              <span>Trusted by 500+ clients worldwide</span>
+              <span>Trusted by 400+ clients worldwide</span>
             </div>
           </div>
 
@@ -41,7 +41,7 @@ const HeroSection = () => {
               />
               
               <div className="absolute -bottom-6 -right-6 bg-accent rounded-2xl p-4 shadow-lg text-white">
-                <div className="text-3xl font-bold">15+</div>
+                <div className="text-3xl font-bold">5+</div>
                 <div className="text-sm">Years Experience</div>
               </div>
             </div>

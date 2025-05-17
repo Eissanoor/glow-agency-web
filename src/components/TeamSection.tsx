@@ -1,40 +1,46 @@
-
 const TeamSection = () => {
   const team = [
     {
       id: 1,
-      name: "Alex Johnson",
-      role: "CEO & Founder",
-      avatar: "AJ",
-      color: "bg-blue-500",
+      name: "Eissa Noor",
+      role: "Full Stack Developer | Artificial Intelligence",
+      avatar: "../assets/tech/teams/eissanoor.jpg", // No image, initials generated from name
+      color: "bg-white",
     },
     {
       id: 2,
-      name: "Robert Lee",
-      role: "CTO",
-      avatar: "RL",
-      color: "bg-purple-500",
+      name: "Muhammad Zakirya",
+      role: "FullStack Developer",
+      avatar: "../assets/tech/teams/zakiryab.jpg", // Corrected path (in public folder)
+      color: "bg-white",
     },
     {
       id: 3,
-      name: "Jessica Williams",
-      role: "Lead Designer",
-      avatar: "JW",
-      color: "bg-green-500",
+      name: "Hasnain Ahmad",
+      role: "Front-End Developer",
+      avatar: "../assets/tech/teams/HASNAIN AHMAD.jpg",
+      color: "bg-[#EBE9EA]",
     },
     {
       id: 4,
-      name: "David Brown",
-      role: "Senior Developer",
-      avatar: "DB",
+      name: "SADEEQ KHAN",
+      role: "FullStack/API Developer",
+      avatar: "../assets/tech/teams/SADEEQ KHAN.png",
       color: "bg-amber-500",
     },
     {
       id: 5,
-      name: "Emma Smith",
-      role: "Marketing Specialist",
-      avatar: "ES",
-      color: "bg-rose-500",
+      name: "FAYSAL ZAMAN",
+      role: "Mobile Developer (Google Flutter)",
+      avatar: "../assets/tech/teams/FAYSAL ZAMAN.png", // Initials directly specified
+      color: "bg-white",
+    },
+    {
+      id: 6,
+      name: "WASIM ZAMAN",
+      role: "Full Stack Mobile Developer (Flutter & Node.js)",
+      avatar: "../assets/tech/teams/WASIM ZAMAN.png",
+      color: "bg-white",
     },
   ];
 
@@ -46,21 +52,37 @@ const TeamSection = () => {
             Top Skilled Experts
           </h2>
           <p className="text-gray-600 dark:text-gray-300">
-            Meet our team of professionals dedicated to delivering exceptional 
+            Meet our team of professionals dedicated to delivering exceptional
             digital solutions and services.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
           {team.map((member) => (
             <div
               key={member.id}
-              className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-sm border border-gray-100 dark:border-gray-700 transition hover:shadow-md"
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-xl border border-gray-100 dark:border-gray-700 transition hover:shadow-md"
             >
               <div
-                className={`w-20 h-20 ${member.color} rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4`}
+                className={`w-36 h-36 ${member.color}  rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4`}
               >
-                {member.avatar}
+                {member.avatar.includes(".") ? ( // Check if avatar is an image path
+                  <img
+                    src={member.avatar}
+                    alt={member.name}
+                    className="w-full h-full rounded-full object-contain"
+                  />
+                ) : member.avatar ? ( // Display initials from avatar field
+                  <span>{member.avatar}</span>
+                ) : ( // Generate initials from name
+                  <span>
+                    {member.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")
+                      .substring(0, 2)}
+                  </span>
+                )}
               </div>
               <h4 className="font-bold text-lg mb-1">{member.name}</h4>
               <p className="text-sm text-gray-600 dark:text-gray-400">

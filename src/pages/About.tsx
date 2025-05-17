@@ -32,14 +32,14 @@ const About = () => {
               
               <div>
                 <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
-                  <span className="text-sm font-medium text-primary">SINCE 2010</span>
+                  <span className="text-sm font-medium text-primary">SINCE 2020</span>
                   <span className="w-2 h-2 ml-2 bg-primary rounded-full"></span>
                 </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">We Provide You Flexible Services</h2>
                 
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  At GlowTech, we believe in the power of technology to transform businesses and improve lives. 
+                  At E&Z Tech Solutions, we believe in the power of technology to transform businesses and improve lives. 
                   Our team of dedicated professionals is committed to providing innovative solutions that meet 
                   the unique needs of each client. With over a decade of experience in the industry, we have 
                   developed a deep understanding of the challenges businesses face in today's digital landscape.
@@ -74,7 +74,7 @@ const About = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Our History</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Founded in 2010, we've grown from a small startup to an industry leader, serving clients worldwide with innovative technology solutions.
+                  Founded in 2020, we've grown from a small startup to an industry leader, serving clients worldwide with innovative technology solutions.
                 </p>
               </div>
               
@@ -86,8 +86,7 @@ const About = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Our Mission</h3>
                 <p className="text-gray-600 dark:text-gray-300">
-                  To empower businesses through technology, delivering innovative solutions that drive growth and success in a rapidly evolving digital landscape.
-                </p>
+                To empower businesses through innovative technology, driving growth and transforming challenges into future-ready solutions that deliver measurable impact. </p>
               </div>
               
               <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm text-center">

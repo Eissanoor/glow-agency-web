@@ -78,7 +78,7 @@ const FAQSection = () => {
       question: "What technologies do you use?",
       answer: (
         <p>
-          We leverage a wide range of modern technologies including JavaScript frameworks like React, Angular, and Vue.js for frontend development; Node.js, Python, and PHP for backend solutions; cloud services like AWS, Azure, and Google Cloud; and mobile development frameworks including React Native and Flutter. We select the most appropriate technology stack based on your project requirements.
+          We leverage a wide range of modern technologies including JavaScript frameworks like React, Next.js for frontend development; Node.js for backend solutions; cloud services like Server, and Google Cloud; and mobile development frameworks including React Native and Flutter. We select the most appropriate technology stack based on your project requirements.
         </p>
       ),
     },

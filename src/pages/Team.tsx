@@ -59,14 +59,14 @@ const Team = () => {
         {/* Team Members Section */}
         <div className="py-16 bg-blue-50 dark:bg-blue-950/20">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            {/* <div className="text-center mb-12">
               <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
                 <span className="text-sm font-medium text-primary">OUR EXPERTS</span>
                 <span className="w-2 h-2 ml-2 bg-primary rounded-full"></span>
               </div>
               
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Top Skilled Experts</h2>
-            </div>
+            </div> */}
             
             <TeamSection />
           </div>

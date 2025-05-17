@@ -1,5 +1,39 @@
 
+import { useEffect, useRef, useState } from 'react';
+
 const ServicesSection = () => {
+  const [animatedCards, setAnimatedCards] = useState<Set<number>>(new Set());
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const cardElement = entry.target as HTMLElement;
+            const cardId = parseInt(cardElement.dataset.cardId || '0');
+            setAnimatedCards(prev => new Set([...prev, cardId]));
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '50px'
+      }
+    );
+
+    const cards = document.querySelectorAll('.service-card');
+    cards.forEach(card => observer.observe(card));
+
+    return () => {
+      cards.forEach(card => observer.unobserve(card));
+    };
+  }, []);
+
+  const getAnimationClass = (index: number) => {
+    if (!animatedCards.has(index + 1)) return '';
+    return index % 2 === 0 ? 'slide-left' : 'slide-right';
+  };
   const services = [
     {
       id: 1,
@@ -25,16 +59,16 @@ const ServicesSection = () => {
       icon: "🎨",
       className: "uxui",
     },
+    // {
+    //   id: 4,
+    //   title: "Digital Marketing",
+    //   description:
+    //     "Strategic digital marketing to boost your online presence and growth.",
+    //   icon: "📈",
+    //   className: "marketing",
+    // },
     {
       id: 4,
-      title: "Digital Marketing",
-      description:
-        "Strategic digital marketing to boost your online presence and growth.",
-      icon: "📈",
-      className: "marketing",
-    },
-    {
-      id: 5,
       title: "IT Consulting",
       description:
         "Expert IT consulting services to help you leverage technology for success.",
@@ -42,12 +76,28 @@ const ServicesSection = () => {
       className: "support",
     },
     {
-      id: 6,
+      id: 5,
       title: "Custom Software Development",
       description:
         "Tailored software solutions designed to meet your specific business needs.",
       icon: "⚙️",
       className: "design",
+    },
+    {
+      id: 6,
+      title: "Networking Solutions",
+      description:
+        "Enterprise-grade networking infrastructure setup and maintenance for optimal connectivity.",
+      icon: "🌍",
+      className: "networking",
+    },
+    {
+      id: 7,
+      title: "SEO Optimization",
+      description:
+        "Search engine optimization strategies to improve your website's visibility and rankings.",
+      icon: "🎯",
+      className: "seo",
     },
   ];
 
@@ -68,19 +118,20 @@ const ServicesSection = () => {
           {services.map((service) => (
             <div
               key={service.id}
-              className={`service-card ${service.className}`}
+              data-card-id={service.id}
+              className={`service-card hover:shadow-2xl ${service.className} ${getAnimationClass(services.indexOf(service))}`}
             >
               <div className="text-3xl mb-4">{service.icon}</div>
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
               <p className="text-gray-600 dark:text-gray-300">
                 {service.description}
               </p>
-              <a
+              {/* <a
                 href="#"
                 className="mt-4 inline-block font-medium text-primary hover:underline"
               >
                 Learn More →
-              </a>
+              </a> */}
             </div>
           ))}
         </div>

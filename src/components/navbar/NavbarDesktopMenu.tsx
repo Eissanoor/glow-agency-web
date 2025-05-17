@@ -33,7 +33,7 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
             </Link>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
+          {/* <NavigationMenuItem>
             <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">Services</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[600px] gap-3 p-6 md:grid-cols-2 lg:grid-cols-2 bg-white dark:bg-gray-800 shadow-lg rounded-xl">
@@ -47,6 +47,12 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
                 ))}
               </ul>
             </NavigationMenuContent>
+          </NavigationMenuItem> */}
+
+          <NavigationMenuItem>
+            <Link to="/services" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+              Services
+            </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>

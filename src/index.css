@@ -159,6 +159,22 @@
   .service-card.uxui::before {
     background: linear-gradient(135deg, #06b6d4 0%, #a5f3fc 100%);
   }
+
+  .service-card.networking {
+    @apply bg-indigo-50 dark:bg-indigo-950;
+  }
+  
+  .service-card.networking::before {
+    background: linear-gradient(135deg, #4f46e5 0%, #c7d2fe 100%);
+  }
+
+  .service-card.seo {
+    @apply bg-yellow-50 dark:bg-yellow-950;
+  }
+  
+  .service-card.seo::before {
+    background: linear-gradient(135deg, #eab308 0%, #fef08a 100%);
+  }
   
   .stat-card {
     @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm transition hover:shadow-md;

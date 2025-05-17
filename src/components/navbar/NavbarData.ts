@@ -23,14 +23,9 @@ export const services: MenuItem[] = [
     description: "User-centered design for digital products"
   },
   {
-    title: "E-commerce Solutions",
-    href: "/services#ecommerce",
-    description: "Online store development and optimization"
-  },
-  {
-    title: "Digital Marketing",
-    href: "/services#digital-marketing",
-    description: "SEO, PPC, social media, and content marketing"
+    title: "Networking Solutions",
+    href: "/services#networking-solutions",
+    description: "Enterprise-grade networking infrastructure setup and maintenance for optimal connectivity."
   },
   {
     title: "IT Consulting",
@@ -55,24 +50,24 @@ export const company: MenuItem[] = [
     href: "/team",
     description: "Meet our talented professionals"
   },
-  {
-    title: "Careers",
-    href: "/careers",
-    description: "Join our growing team of experts"
-  },
-  {
-    title: "Portfolio",
-    href: "/portfolio",
-    description: "Explore our completed projects"
-  },
-  {
-    title: "Testimonials",
-    href: "/testimonials",
-    description: "What our clients say about our work"
-  },
-  {
-    title: "Contact Us",
-    href: "/contact",
-    description: "Get in touch with our team"
-  }
+  // {
+  //   title: "Careers",
+  //   href: "/careers",
+  //   description: "Join our growing team of experts"
+  // },
+  // {
+  //   title: "Portfolio",
+  //   href: "/portfolio",
+  //   description: "Explore our completed projects"
+  // },
+  // {
+  //   title: "Testimonials",
+  //   href: "/testimonials",
+  //   description: "What our clients say about our work"
+  // },
+  // {
+  //   title: "Contact Us",
+  //   href: "/contact",
+  //   description: "Get in touch with our team"
+  // }
 ];

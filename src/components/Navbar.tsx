@@ -7,6 +7,7 @@ import NavbarDesktopMenu from "./navbar/NavbarDesktopMenu";
 import NavbarMobileMenu from "./navbar/NavbarMobileMenu";
 import { services, company } from "./navbar/NavbarData";
 import { Link } from "react-router-dom";
+import logo from "../assets/tech/logo-transparent.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,7 +38,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold text-primary">
-              Glow<span className="text-accent">Tech</span>
+              {/* Glow<span className="text-accent">Tech</span> */}
+              <img src={logo} alt="" className="w-16 h-16 object-cover cursor-pointer" />
             </Link>
           </div>
 
