@@ -41,6 +41,13 @@ const NavbarMobileMenu = ({ isMenuOpen, setIsMenuOpen }: NavbarMobileMenuProps) 
           Portfolio
         </a>
         <a
+          href="/testimonials"
+          className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Testimonials
+        </a>
+        <a
           href="/team"
           className="font-medium text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary transition"
           onClick={() => setIsMenuOpen(false)}

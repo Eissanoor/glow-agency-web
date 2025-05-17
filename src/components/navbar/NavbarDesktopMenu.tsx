@@ -65,19 +65,19 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="#portfolio" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <a href="/portfolio" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
               Portfolio
             </a>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="#testimonials" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <a href="/testimonials" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
               Testimonials
             </a>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <a href="#contact" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <a href="/contact" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
               Contact
             </a>
           </NavigationMenuItem>

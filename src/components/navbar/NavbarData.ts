@@ -8,39 +8,39 @@ export interface MenuItem {
 
 export const services: MenuItem[] = [
   {
-    title: "IT Management Services",
-    href: "/services",
-    description: "Professional IT management solutions for your business"
+    title: "Web Development",
+    href: "/services#web-development",
+    description: "Custom website development with responsive design"
   },
   {
-    title: "Data Tracking Security",
-    href: "/services",
-    description: "Secure data tracking and protection solutions"
+    title: "Mobile App Development",
+    href: "/services#mobile-development",
+    description: "Native and cross-platform mobile applications"
   },
   {
-    title: "Website Development",
-    href: "/services",
-    description: "Custom website design and development services"
+    title: "UI/UX Design",
+    href: "/services#ui-ux-design",
+    description: "User-centered design for digital products"
   },
   {
-    title: "CRM Solutions and Design",
-    href: "/services",
-    description: "Customer relationship management solutions"
+    title: "E-commerce Solutions",
+    href: "/services#ecommerce",
+    description: "Online store development and optimization"
   },
   {
-    title: "UI/UX Design Services",
-    href: "/services",
-    description: "User interface and experience design services"
+    title: "Digital Marketing",
+    href: "/services#digital-marketing",
+    description: "SEO, PPC, social media, and content marketing"
   },
   {
-    title: "Technology Solution",
-    href: "/services",
-    description: "Innovative technology solutions for businesses"
+    title: "IT Consulting",
+    href: "/services#it-consulting",
+    description: "Expert technology guidance for your business"
   },
   {
-    title: "Software Development",
-    href: "/services",
-    description: "Custom software development for various industries"
+    title: "Custom Software Development",
+    href: "/services#software-development",
+    description: "Tailored software solutions for specific needs"
   }
 ];
 
@@ -48,41 +48,31 @@ export const company: MenuItem[] = [
   {
     title: "About Us",
     href: "/about",
-    description: "Learn more about our company and mission"
+    description: "Learn about our mission, vision, and values"
   },
   {
-    title: "Our Pricing",
-    href: "/pricing",
-    description: "Streamlined pricing options for our services"
+    title: "Our Team",
+    href: "/team",
+    description: "Meet our talented professionals"
+  },
+  {
+    title: "Careers",
+    href: "/careers",
+    description: "Join our growing team of experts"
   },
   {
     title: "Portfolio",
     href: "/portfolio",
-    description: "Explore our complete project portfolio"
+    description: "Explore our completed projects"
   },
   {
-    title: "Portfolio Details",
-    href: "/portfolio",
-    description: "Detailed view of our work and case studies"
+    title: "Testimonials",
+    href: "/testimonials",
+    description: "What our clients say about our work"
   },
   {
-    title: "Team",
-    href: "/team",
-    description: "Meet our friendly and professional team"
-  },
-  {
-    title: "Team Details",
-    href: "/team",
-    description: "Learn more about our team members"
-  },
-  {
-    title: "Services",
-    href: "/services",
-    description: "Explore all our service offerings"
-  },
-  {
-    title: "Service Details",
-    href: "/services",
-    description: "Detailed information about our services"
+    title: "Contact Us",
+    href: "/contact",
+    description: "Get in touch with our team"
   }
 ];
