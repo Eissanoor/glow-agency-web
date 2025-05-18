@@ -18,9 +18,9 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="px-8">Get Started</Button>
-              <Button size="lg" variant="outline" className="px-8">
+              {/* <Button size="lg" variant="outline" className="px-8">
                 Learn More
-              </Button>
+              </Button> */}
             </div>
             <div className="mt-10 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
               <div className="flex -space-x-2">
@@ -28,7 +28,7 @@ const HeroSection = () => {
                 <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs">KL</div>
                 <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs">MN</div>
               </div>
-              <span>Trusted by 400+ clients worldwide</span>
+              <span>Trusted by 100+ clients worldwide</span>
             </div>
           </div>
 
