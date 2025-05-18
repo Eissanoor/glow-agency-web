@@ -1,32 +1,26 @@
-
-import { NavigationMenuLink } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 interface NavbarListItemProps {
   title: string;
   href: string;
   description: string;
+  isActive: boolean; // Add isActive prop
 }
 
-const NavbarListItem = ({
-  title,
-  href,
-  description,
-}: NavbarListItemProps) => {
+const NavbarListItem = ({ title, href, description, isActive }: NavbarListItemProps) => {
   return (
     <li>
-      <NavigationMenuLink asChild>
-        <Link
-          to={href}
-          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {description}
-          </p>
-        </Link>
-      </NavigationMenuLink>
+      <Link
+        to={href}
+        className={cn(
+          "block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700",
+          isActive ? "bg-[#FF7E29] text-white " : "text-gray-800 dark:text-gray-200"
+        )}
+      >
+        <h3 className="text-lg">{title}</h3>
+        <p className="text-sm">{description}</p>
+      </Link>
     </li>
   );
 };

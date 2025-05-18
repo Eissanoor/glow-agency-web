@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -48,29 +49,34 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-6">Services</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">
+                <Link to="/services" className="text-gray-400 hover:text-white transition">
                   Web Development
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">
+                <Link to="/services" className="text-gray-400 hover:text-white transition">
                   Mobile App Development
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">
+                <Link to="/services" className="text-gray-400 hover:text-white transition">
                   UI/UX Design
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">
-                  Digital Marketing
-                </a>
+                <Link to="/services" className="text-gray-400 hover:text-white transition">
+                  Networking Solutions
+                </Link>
+              </li>
+               <li>
+                <Link to="/services" className="text-gray-400 hover:text-white transition">
+                  SEO Optimization
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">
+                <Link to="/services" className="text-gray-400 hover:text-white transition">
                   IT Consulting
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -79,29 +85,29 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">
+                <Link to="/about" className="text-gray-400 hover:text-white transition">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">
+                <Link to="/portfolio" className="text-gray-400 hover:text-white transition">
                   Our Projects
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">
+                <Link to="/team" className="text-gray-400 hover:text-white transition">
                   Our Team
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">
+                <Link to="/testimonials" className="text-gray-400 hover:text-white transition">
                   Testimonials
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-white transition">
+                <Link to="/contact" className="text-gray-400 hover:text-white transition">
                   Contact Us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -112,16 +118,19 @@ const Footer = () => {
               <li className="flex items-start">
                 <span className="text-primary mr-3">📍</span>
                 <span className="text-gray-400">
-                  123 Tech Street, Innovation City, 10001
+                  E&Z Tech Soluction Islamabad
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-3">📞</span>
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <div className="flex flex-col">
+                  <span className="text-gray-400">+(92)336 1989322</span>
+                <span className="text-gray-400">+(92)349 9386512</span>
+                </div>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-3">✉️</span>
-                <span className="text-gray-400">info@glowtech.com</span>
+                <span className="text-gray-400">info@E&ZTechsoluction.com</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-3">🕙</span>
@@ -135,7 +144,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 pt-8">
           <p className="text-center text-gray-400 text-sm">
-            © {new Date().getFullYear()} GlowTech. All rights reserved. Designed with ❤️
+            © {new Date().getFullYear()} E&Z Tech Soluction. All rights reserved. Designed with ❤️
           </p>
         </div>
       </div>

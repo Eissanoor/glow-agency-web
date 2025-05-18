@@ -1,4 +1,3 @@
-
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import {
   NavigationMenu,
@@ -9,7 +8,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import NavbarListItem from "./NavbarListItem";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // Import useLocation
 
 interface MenuItemData {
   title: string;
@@ -23,48 +22,53 @@ interface NavbarDesktopMenuProps {
 }
 
 const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
+  const location = useLocation(); // Get the current route
+
+  const isActive = (path: string) => location.pathname === path; // Check if the route is active
+
   return (
     <div className="hidden md:flex items-center space-x-4">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Link to="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <Link
+              to="/"
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "bg-transparent",
+                isActive("/") ? "bg-[#FF7E29] text-md underline" : ""
+              )}
+            >
               Home
             </Link>
           </NavigationMenuItem>
 
-          {/* <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">Services</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[600px] gap-3 p-6 md:grid-cols-2 lg:grid-cols-2 bg-white dark:bg-gray-800 shadow-lg rounded-xl">
-                {services.map((service, index) => (
-                  <NavbarListItem
-                    key={`service-${index}`}
-                    title={service.title}
-                    href={service.href}
-                    description={service.description}
-                  />
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem> */}
-
           <NavigationMenuItem>
-            <Link to="/services" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <Link
+              to="/services"
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "bg-transparent",
+                isActive("/services") ? "bg-[#FF7E29]  text-md underline" : ""
+              )}
+            >
               Services
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">Company</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-[#FF7E29] focus:bg-[#FF7E29] data-[state=open]:bg-[#FF7E29]">
+              Company
+            </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[600px] gap-3 p-6 md:grid-cols-2 lg:grid-cols-2 bg-white dark:bg-gray-800 shadow-lg rounded-xl">
+              <ul className="grid w-[700px] gap-3 p-6 md:grid-cols-2 lg:grid-cols-2 bg-white dark:bg-gray-800 shadow-lg rounded-xl">
                 {company.map((item, index) => (
                   <NavbarListItem
                     key={`company-${index}`}
                     title={item.title}
                     href={item.href}
                     description={item.description}
+                    isActive={isActive(item.href)} // Pass isActive status as a prop
                   />
                 ))}
               </ul>
@@ -72,19 +76,40 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/portfolio" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <Link
+              to="/portfolio"
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "bg-transparent",
+                isActive("/portfolio") ? "bg-[#FF7E29] text-md underline" : ""
+              )}
+            >
               Portfolio
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/testimonials" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <Link
+              to="/testimonials"
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "bg-transparent",
+                isActive("/testimonials") ? "bg-[#FF7E29] text-md underline" : ""
+              )}
+            >
               Testimonials
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link to="/contact" className={cn(navigationMenuTriggerStyle(), "bg-transparent")}>
+            <Link
+              to="/contact"
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "bg-transparent",
+                isActive("/contact") ? "bg-[#FF7E29] text-md underline" : ""
+              )}
+            >
               Contact
             </Link>
           </NavigationMenuItem>

@@ -46,15 +46,20 @@ const ContactSection = () => {
   const contactInfo = [
     {
       icon: <Phone className="h-5 w-5" />,
-      text: "+880-1680-6361-89",
+     text: (
+      <>
+        <div  className="my-1">+(92)336 1989322</div>
+        <div>+(92)349 9386512</div>
+      </>
+    ),
     },
     {
       icon: <Mail className="h-5 w-5" />,
-      text: "techco@gmail.com",
+      text: "info@E&ZTechsoluction.com",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
-      text: "Sunshine Business Park",
+      text: "E&Z Tech Soluction Islamabad",
     },
   ];
 

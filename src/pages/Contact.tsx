@@ -29,7 +29,7 @@ const Contact = () => {
                   </svg>
                 </div>
                 <h3 className="font-semibold mb-1">Location</h3>
-                <p className="text-gray-600 dark:text-gray-300">Sunshine Business Park<br />Sector 94, Poland</p>
+                <p className="text-gray-600 dark:text-gray-300">E&Z Tech Soluction <br/> Islamabad</p>
               </div>
               
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow text-center">
@@ -39,7 +39,7 @@ const Contact = () => {
                   </svg>
                 </div>
                 <h3 className="font-semibold mb-1">Contact</h3>
-                <p className="text-gray-600 dark:text-gray-300">+(800) 555-0108<br />+(800) 555-0111</p>
+                <p className="text-gray-600 dark:text-gray-300">+(92)336 1989322<br />+(92)349 9386512</p>
               </div>
               
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow text-center">
@@ -49,7 +49,7 @@ const Contact = () => {
                   </svg>
                 </div>
                 <h3 className="font-semibold mb-1">Email</h3>
-                <p className="text-gray-600 dark:text-gray-300">techco@example.com<br />gmail@example.com</p>
+                <p className="text-gray-600 dark:text-gray-300">info@E&ZTechsoluction.com</p>
               </div>
               
               <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow text-center">
