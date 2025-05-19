@@ -6,7 +6,7 @@ import brand3 from '../assets/tech/brands/brand3.png';
 import brand4 from '../assets/tech/brands/brand4.png';
 import brand5 from '../assets/tech/brands/brand5.png';
 import brand6 from '../assets/tech/brands/brand6.png';
-import banner2 from '../assets/tech/banner3.jpg';
+import banner2 from '../assets/tech/banner4.jpg';
 const StatsSection = () => {
   const [isInView, setIsInView] = useState(false);
   const [counts, setCounts] = useState<{ [key: string]: number }>({});
