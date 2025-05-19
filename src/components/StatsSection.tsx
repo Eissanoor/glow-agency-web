@@ -1,5 +1,11 @@
-
 import { useEffect, useRef, useState } from 'react';
+import { Brain as BrainIcon, Shield as ShieldCheckIcon, ThumbsUp as ThumbsUpIcon, Target as TargetIcon } from 'lucide-react';
+import brand1 from '../assets/tech/brands/brand1.png';
+import brand2 from '../assets/tech/brands/brand2.png';
+import brand3 from '../assets/tech/brands/brand3.png';
+import brand4 from '../assets/tech/brands/brand4.png';
+import brand5 from '../assets/tech/brands/brand5.png';
+import brand6 from '../assets/tech/brands/brand6.png';
 
 const StatsSection = () => {
   const [isInView, setIsInView] = useState(false);
@@ -52,60 +58,95 @@ const StatsSection = () => {
     });
   };
 
+  const brands = [
+    { id: 1, name: 'CH', logo: brand1 },
+    { id: 2, name: 'Radiant', logo: brand2 },
+    { id: 3, name: 'Maxhub', logo: brand3 },
+    { id: 4, name: 'IC Solutions', logo: brand4 },
+    { id: 5, name: 'Exotec', logo: brand5 },
+    { id: 6, name: 'Proview', logo: brand6 },
+    { id: 7, name: 'A4Tech', logo: brand2 },
+    { id: 8, name: 'Mov', logo: brand3 },
+  ];
+
   const stats = [
     {
       id: 1,
-      value: "10+",
-      label: "Team Members",
-      icon: "👥",
+      value: "25+",
+      label: "Years of experience",
+      icon: <BrainIcon className="w-12 h-12 text-primary" />,
     },
     {
       id: 2,
-      value: "100+",
-      label: "Projects Completed",
-      icon: "📊",
+      value: "280+",
+      label: "Success Stories",
+      icon: <ShieldCheckIcon className="w-12 h-12 text-primary" />,
     },
     {
       id: 3,
-      value: "3M+",
-      label: "Lines of Code",
-      icon: "💻",
+      value: "6K+",
+      label: "Companies Trust Us",
+      icon: <ThumbsUpIcon className="w-12 h-12 text-primary" />,
     },
     {
       id: 4,
-      value: "98%",
-      label: "Client Satisfaction",
-      icon: "⭐",
+      value: "100%",
+      label: "Results Guaranteed",
+      icon: <TargetIcon className="w-12 h-12 text-primary" />,
     },
   ];
 
   return (
-    <section className="py-16 bg-white dark:bg-gray-900">
+    <section className="py-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
-            <span className="text-sm font-medium text-primary">OUR ACHIEVEMENTS</span>
-            <span className="w-2 h-2 ml-2 bg-primary rounded-full"></span>
+        {/* Brands Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-1 rounded-full bg-pink-100 dark:bg-pink-900/30 mb-4">
+            <span className="text-sm font-medium text-pink-500">Brand We</span>
+            <span className="text-sm font-medium text-gray-600 dark:text-gray-300 ml-1">Work With</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our <span className="text-primary">Statistics</span>
-          </h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 mt-12">
+            {brands.map((brand) => (
+              <div key={brand.id} className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                <img
+                  src={brand.logo}
+                  alt={brand.name}
+                  className="h-8 object-contain filter dark:brightness-0 dark:invert"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-        
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {/* Stats Section */}
+        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {stats.map((stat) => (
-            <div key={stat.id} className="stat-card bg-gradient-to-b from-white shadow-md to-gray-50 dark:from-gray-800 bg-white dark:to-gray-900 hover:shadow-2xl transition-all duration-300">
-              <div className="mb-4 text-3xl text-primary">{stat.icon}</div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+            <div
+              key={stat.id}
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div className="mb-6">{stat.icon}</div>
+              <div className="text-4xl font-bold text-gray-900 dark:text-white mb-3">
                 {isInView ? (
                   counts[stat.id] + stat.value.replace(/[0-9]/g, '')
                 ) : (
                   '0' + stat.value.replace(/[0-9]/g, '')
                 )}
               </div>
-              <div className="text-gray-600 dark:text-gray-300">{stat.label}</div>
+              <div className="text-gray-600 dark:text-gray-300 text-lg">{stat.label}</div>
             </div>
           ))}
+        </div>
+
+        {/* Team Stats Card */}
+        <div className="mt-8 lg:mt-12">
+          <div className="bg-blue-600 rounded-2xl p-8 text-white flex items-center justify-center">
+            <div className="text-center">
+              <h3 className="text-4xl font-bold mb-2">12000+</h3>
+              <p className="text-xl">employees in 30 countries in Europe</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
