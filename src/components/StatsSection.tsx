@@ -6,11 +6,12 @@ import brand3 from '../assets/tech/brands/brand3.png';
 import brand4 from '../assets/tech/brands/brand4.png';
 import brand5 from '../assets/tech/brands/brand5.png';
 import brand6 from '../assets/tech/brands/brand6.png';
-
+import banner2 from '../assets/tech/banner3.jpg';
 const StatsSection = () => {
   const [isInView, setIsInView] = useState(false);
   const [counts, setCounts] = useState<{ [key: string]: number }>({});
   const sectionRef = useRef<HTMLDivElement>(null);
+  const brandContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,6 +34,39 @@ const StatsSection = () => {
       }
     };
   }, [isInView]);
+
+  // Brand slider animation
+  useEffect(() => {
+    const slider = brandContainerRef.current;
+    if (!slider) return;
+
+    const brands = slider.querySelectorAll('.brand-item');
+    const brandWidth = brands[0] ? (brands[0] as HTMLElement).offsetWidth : 0;
+    const gap = 32; // gap between items
+    const totalWidth = brands.length * (brandWidth + gap);
+    
+    const animateBrands = () => {
+      if (!slider) return;
+      
+      const currentScroll = slider.scrollLeft;
+      const newPosition = currentScroll + 1;
+      
+      // Reset position when we reach the end
+      if (newPosition >= totalWidth / 2) {
+        slider.scrollLeft = 0;
+      } else {
+        slider.scrollLeft = newPosition;
+      }
+      
+      requestAnimationFrame(animateBrands);
+    };
+    
+    const animationId = requestAnimationFrame(animateBrands);
+    
+    return () => {
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
 
   const startCounting = () => {
     stats.forEach((stat) => {
@@ -59,14 +93,23 @@ const StatsSection = () => {
   };
 
   const brands = [
-    { id: 1, name: 'CH', logo: brand1 },
-    { id: 2, name: 'Radiant', logo: brand2 },
-    { id: 3, name: 'Maxhub', logo: brand3 },
-    { id: 4, name: 'IC Solutions', logo: brand4 },
-    { id: 5, name: 'Exotec', logo: brand5 },
-    { id: 6, name: 'Proview', logo: brand6 },
-    { id: 7, name: 'A4Tech', logo: brand2 },
-    { id: 8, name: 'Mov', logo: brand3 },
+    { id: 1, name: 'TEC', logo: brand1 },
+    { id: 2, name: 'PROVIEW', logo: brand2 },
+    { id: 3, name: 'A4TECH', logo: brand3 },
+    { id: 4, name: 'MOVEX', logo: brand4 },
+    { id: 5, name: 'A4TECH', logo: brand5 },
+    { id: 6, name: 'radiant', logo: brand6 },
+    { id: 7, name: 'MAXHUB', logo: brand3 },
+    { id: 8, name: 'IC solutions', logo: brand4 },
+    // Duplicate brands for continuous scrolling
+    { id: 9, name: 'TEC', logo: brand1 },
+    { id: 10, name: 'PROVIEW', logo: brand2 },
+    { id: 11, name: 'A4TECH', logo: brand3 },
+    { id: 12, name: 'MOVEX', logo: brand4 },
+    { id: 13, name: 'A4TECH', logo: brand5 },
+    { id: 14, name: 'radiant', logo: brand6 },
+    { id: 15, name: 'MAXHUB', logo: brand3 },
+    { id: 16, name: 'IC solutions', logo: brand4 },
   ];
 
   const stats = [
@@ -74,77 +117,90 @@ const StatsSection = () => {
       id: 1,
       value: "25+",
       label: "Years of experience",
-      icon: <BrainIcon className="w-12 h-12 text-primary" />,
+      icon: <BrainIcon className="w-12 h-12 text-blue-800" />,
     },
     {
       id: 2,
       value: "280+",
       label: "Success Stories",
-      icon: <ShieldCheckIcon className="w-12 h-12 text-primary" />,
+      icon: <ShieldCheckIcon className="w-12 h-12 text-blue-800" />,
     },
     {
       id: 3,
       value: "6K+",
       label: "Companies Trust Us",
-      icon: <ThumbsUpIcon className="w-12 h-12 text-primary" />,
+      icon: <ThumbsUpIcon className="w-12 h-12 text-blue-600" />,
     },
     {
       id: 4,
       value: "100%",
       label: "Results Guaranteed",
-      icon: <TargetIcon className="w-12 h-12 text-primary" />,
+      icon: <TargetIcon className="w-12 h-12 text-blue-800" />,
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4">
         {/* Brands Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-1 rounded-full bg-pink-100 dark:bg-pink-900/30 mb-4">
-            <span className="text-sm font-medium text-pink-500">Brand We</span>
-            <span className="text-sm font-medium text-gray-600 dark:text-gray-300 ml-1">Work With</span>
+          <div className="inline-flex items-center px-6 py-2 rounded-full bg-pink-500 mb-8">
+            <span className="text-sm font-medium text-white">Brand We</span>
+            <span className="text-sm font-medium text-white ml-1">Work With</span>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 mt-12">
-            {brands.map((brand) => (
-              <div key={brand.id} className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                <img
-                  src={brand.logo}
-                  alt={brand.name}
-                  className="h-8 object-contain filter dark:brightness-0 dark:invert"
-                />
-              </div>
-            ))}
+          <div 
+            ref={brandContainerRef}
+            className="overflow-x-hidden relative whitespace-nowrap py-4"
+          >
+            <div className="inline-flex gap-8">
+              {brands.map((brand) => (
+                <div 
+                  key={brand.id} 
+                  className="brand-item inline-block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                  style={{ width: '180px', height: '80px' }}
+                >
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Stats Section */}
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {stats.map((stat) => (
-            <div
-              key={stat.id}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <div className="mb-6">{stat.icon}</div>
-              <div className="text-4xl font-bold text-gray-900 dark:text-white mb-3">
-                {isInView ? (
-                  counts[stat.id] + stat.value.replace(/[0-9]/g, '')
-                ) : (
-                  '0' + stat.value.replace(/[0-9]/g, '')
-                )}
+        <div className="grid grid-cols-12 gap-6">
+          <div ref={sectionRef} className="col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {stats.map((stat) => (
+              <div
+                key={stat.id}
+                className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <div className="mb-6">{stat.icon}</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">
+                  {isInView ? (
+                    counts[stat.id] + stat.value.replace(/[0-9]/g, '')
+                  ) : (
+                    '0' + stat.value.replace(/[0-9]/g, '')
+                  )}
+                </div>
+                <div className="text-gray-600 text-lg">{stat.label}</div>
               </div>
-              <div className="text-gray-600 dark:text-gray-300 text-lg">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Team Stats Card */}
-        <div className="mt-8 lg:mt-12">
-          <div className="bg-blue-600 rounded-2xl p-8 text-white flex items-center justify-center">
-            <div className="text-center">
-              <h3 className="text-4xl font-bold mb-2">12000+</h3>
-              <p className="text-xl">employees in 30 countries in Europe</p>
+          {/* Team Stats Card */}
+          <div className="col-span-12 lg:col-span-4">
+            <div className="rounded-xl h-full flex items-center justify-center overflow-hidden relative">
+              <img 
+                src={banner2} 
+                alt="Team members" 
+                className="absolute  h-full w-full opacity-90"
+              />
+             
             </div>
           </div>
         </div>
