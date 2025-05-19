@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/tech/logo/logo3.jpg";
+import logo from "../assets/tech/logo/logo3.png";
 
 const Footer = () => {
   return (

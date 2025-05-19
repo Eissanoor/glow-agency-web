@@ -7,7 +7,7 @@ import NavbarDesktopMenu from "./navbar/NavbarDesktopMenu";
 import NavbarMobileMenu from "./navbar/NavbarMobileMenu";
 import { services, company } from "./navbar/NavbarData";
 import { Link } from "react-router-dom";
-import logo from "../assets/tech/logo/logo3.jpg";
+import logo from "../assets/tech/logo/logo4.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,18 +28,18 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed bg-white/80 top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-2 py-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold text-primary">
               {/* Glow<span className="text-accent">Tech</span> */}
-              <img src={logo} alt="" className="w-full h-20 object-cover cursor-pointer" />
+              <img src={logo} alt="" className="w-full h-28 object-cover cursor-pointer" />
             </Link>
           </div>
 
