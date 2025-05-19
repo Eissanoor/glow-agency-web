@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/tech/logo/logo3.jpg";
 
 const Footer = () => {
   return (
@@ -6,9 +7,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <a href="/" className="text-2xl font-bold mb-6 inline-block">
-              Glow<span className="text-accent">Tech</span>
-            </a>
+            <Link to="/" className="text-2xl font-bold mb-6 inline-block">
+              <img src={logo} alt="" className="w-full h-20 object-cover cursor-pointer" />
+            </Link>
             <p className="text-gray-400 mb-6">
               Empowering businesses with innovative digital solutions and
               technology services to thrive in the digital age.

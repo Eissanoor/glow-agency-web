@@ -15,7 +15,7 @@ const NavbarListItem = ({ title, href, description, isActive }: NavbarListItemPr
         to={href}
         className={cn(
           "block p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700",
-          isActive ? "bg-[#FF7E29] text-white " : "text-gray-800 dark:text-gray-200"
+          isActive ? " text-white underline" : "text-gray-800 dark:text-gray-200"
         )}
       >
         <h3 className="text-lg">{title}</h3>

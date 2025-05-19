@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import banerlog from "../assets/tech/Barner2.jpg"
 
 const HeroSection = () => {
   return (
@@ -35,7 +36,7 @@ const HeroSection = () => {
           <div className="md:w-1/2 relative animate-fade-in">
             <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-3 shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=1200"
+                src={banerlog}
                 alt="IT Solutions"
                 className="rounded-xl w-full"
               />

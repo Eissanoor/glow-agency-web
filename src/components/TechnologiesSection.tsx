@@ -1,19 +1,34 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  Code, 
-  FileCode, 
-  Database, 
-  CloudCog, 
-  Smartphone, 
-  Terminal, 
-  SquareCode, 
-  Server, 
-  Laptop, 
-  Braces
-} from "lucide-react";
+import {
+  SiJavascript,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiWordpress,
+  SiMongodb,
+  SiPostgresql,
+  SiFlutter,
+  SiAndroid,
+  SiApple,
+  SiGithub,
+  SiPostman,
+  SiNpm,
+  SiFigma,
+  SiGooglechrome,
+  SiPhp,
+  SiBootstrap,
+  SiAngular,
+} from "react-icons/si";
+import { BiLogoVisualStudio } from "react-icons/bi";
+import { FaGitAlt } from "react-icons/fa";
+import Cursorailogo from "../assets/tech/useTechnologies/Cursorai.jpg";
+import windsurflogo from "../assets/tech/useTechnologies/windsurf.jpg";
+import { FaVuejs } from "react-icons/fa6";
+
+
+
 
 const TechnologiesSection = () => {
   const [activeTab, setActiveTab] = useState("web");
@@ -23,55 +38,52 @@ const TechnologiesSection = () => {
       id: "web",
       name: "Web Platform",
       technologies: [
-        { name: "JavaScript", icon: <FileCode className="w-12 h-12 text-yellow-500" /> },
-        { name: "React JS", icon: <Code className="w-12 h-12 text-blue-500" /> },
-        { name: "Next.js", icon: <Server className="w-12 h-12 text-black dark:text-white" /> },
-        { name: "Node.js", icon: <Terminal className="w-12 h-12 text-green-600" /> },
-        { name: "WordPress", icon: <CloudCog className="w-12 h-12 text-blue-600" /> },
+        { name: "JavaScript", icon: <SiJavascript className="w-12 h-12 text-yellow-500" /> },
+        { name: "React JS", icon: <SiReact className="w-12 h-12 text-blue-500" /> },
+        { name: "Next.js", icon: <SiNextdotjs className="w-12 h-12 text-black dark:text-white" /> },
+        { name: "Node.js", icon: <SiNodedotjs className="w-12 h-12 text-green-600" /> },
+        { name: "WordPress", icon: <SiWordpress className="w-12 h-12 text-blue-600" /> },
+        { name: "Bootstrap", icon: <SiBootstrap className="w-12 h-12 text-purple-600" /> },
+        { name: "AngularJS", icon: <SiAngular className="w-12 h-12 text-red-600" /> },
+        { name: "Vue.js", icon: <FaVuejs className="w-12 h-12 text-green-500" /> },
       ],
     },
     {
       id: "databases",
       name: "Databases",
       technologies: [
-        { name: "Database", icon: <Database className="w-12 h-12" /> },
-        { name: "MongoDB", icon: <Database className="w-12 h-12 text-green-500" /> },
-        { name: "SQL Server", icon: <Database className="w-12 h-12 text-blue-600" /> },
-        { name: "PostgreSQL", icon: <Database className="w-12 h-12 text-blue-400" /> },
-      ],
-    },
-    {
-      id: "cloud",
-      name: "Cloud & DevOps",
-      technologies: [
-        { name: "Cloud", icon: <CloudCog className="w-12 h-12" /> },
-        { name: "Server", icon: <Server className="w-12 h-12" /> },
+        { name: "MongoDB", icon: <SiMongodb className="w-12 h-12 text-green-500" /> },
+        { name: "PostgreSQL", icon: <SiPostgresql className="w-12 h-12 text-blue-400" /> },
+        { name: "API", icon: <SiPostman className="w-12 h-12 text-orange-500" /> },
+        { name: "PHP", icon: <SiPhp className="w-12 h-12 text-blue-700" /> },
       ],
     },
     {
       id: "mobile",
       name: "Mobile Apps",
       technologies: [
-        { name: "React Native", icon: <Code className="w-12 h-12 text-blue-500" /> },
-        { name: "Flutter", icon: <Smartphone className="w-12 h-12 text-blue-400" /> },
-        { name: "Android", icon: <Smartphone className="w-12 h-12 text-green-500" /> },
-        { name: "iOS", icon: <Smartphone className="w-12 h-12 text-gray-800 dark:text-gray-200" /> },
+        { name: "Flutter", icon: <SiFlutter className="w-12 h-12 text-blue-400" /> },
+        { name: "React Native", icon: <SiReact className="w-12 h-12 text-blue-500" /> },
+        { name: "Java", icon: <SiNodedotjs className="w-12 h-12 text-red-600" /> },
+        { name: "Android", icon: <SiAndroid className="w-12 h-12 text-green-500" /> },
+        { name: "iOS", icon: <SiApple className="w-12 h-12 text-gray-800 dark:text-gray-200" /> },
+        
       ],
     },
     {
       id: "tools",
       name: "Development Tools",
       technologies: [
-        { name: "VS Code", icon: <FileCode className="w-12 h-12 text-blue-500" /> },
-        { name: "Windsurf", icon: <SquareCode className="w-12 h-12 text-purple-500" /> },
-        { name: "Cursor", icon: <Braces className="w-12 h-12 text-purple-500" /> },
-        { name: "Android Studio", icon: <Laptop className="w-12 h-12 text-green-500" /> },
-        { name: "GitHub", icon: <CloudCog className="w-12 h-12 text-gray-800 dark:text-gray-200" /> },
-        { name: "Postman", icon: <Server className="w-12 h-12 text-orange-500" /> },
-        { name: "Chrome DevTools", icon: <Code className="w-12 h-12 text-blue-600" /> },
-        { name: "npm", icon: <Terminal className="w-12 h-12 text-red-500" /> },
-        { name: "Git", icon: <Code className="w-12 h-12 text-orange-600" /> },
-        { name: "Figma", icon: <FileCode className="w-12 h-12 text-purple-500" /> },
+        { name: "VS Code", icon: <BiLogoVisualStudio className="w-12 h-12 text-blue-500" /> },
+        { name: "GitHub", icon: <SiGithub className="w-12 h-12 text-gray-800 dark:text-gray-200" /> },
+        { name: "Postman", icon: <SiPostman className="w-12 h-12 text-orange-500" /> },
+        { name: "npm", icon: <SiNpm className="w-12 h-12 text-red-500" /> },
+        { name: "Git", icon: <FaGitAlt className="w-12 h-12 text-purple-500" /> },
+        { name: "Figma", icon: <SiFigma className="w-12 h-12 text-purple-500" /> },
+        { name: "Chrome DevTools", icon: <SiGooglechrome className="w-12 h-12 text-blue-500" /> },
+        { name: "Cursor AI", icon: <img src={Cursorailogo} className="w-12 h-12 text-purple-500" /> },
+        { name: "Windsurf", icon: <img src={windsurflogo} className="w-12 h-12 text-green-500" /> },
+        { name: "Android Studio", icon: <SiAndroid className="w-12 h-12 text-green-600" /> },
       ],
     },
   ];

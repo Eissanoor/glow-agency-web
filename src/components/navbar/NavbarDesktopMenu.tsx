@@ -36,7 +36,7 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
               className={cn(
                 navigationMenuTriggerStyle(),
                 "bg-transparent",
-                isActive("/") ? "bg-[#FF7E29] text-md underline" : ""
+                isActive("/") ? " text-md underline" : ""
               )}
             >
               Home
@@ -49,7 +49,7 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
               className={cn(
                 navigationMenuTriggerStyle(),
                 "bg-transparent",
-                isActive("/services") ? "bg-[#FF7E29]  text-md underline" : ""
+                isActive("/services") ? "  text-md underline" : ""
               )}
             >
               Services
@@ -57,7 +57,7 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent hover:bg-[#FF7E29] focus:bg-[#FF7E29] data-[state=open]:bg-[#FF7E29]">
+            <NavigationMenuTrigger className="bg-transparent hover: focus: data-[state=open]:">
               Company
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -81,7 +81,7 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
               className={cn(
                 navigationMenuTriggerStyle(),
                 "bg-transparent",
-                isActive("/portfolio") ? "bg-[#FF7E29] text-md underline" : ""
+                isActive("/portfolio") ? " text-md underline" : ""
               )}
             >
               Portfolio
@@ -94,7 +94,7 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
               className={cn(
                 navigationMenuTriggerStyle(),
                 "bg-transparent",
-                isActive("/testimonials") ? "bg-[#FF7E29] text-md underline" : ""
+                isActive("/testimonials") ? " text-md underline" : ""
               )}
             >
               Testimonials
@@ -107,7 +107,7 @@ const NavbarDesktopMenu = ({ services, company }: NavbarDesktopMenuProps) => {
               className={cn(
                 navigationMenuTriggerStyle(),
                 "bg-transparent",
-                isActive("/contact") ? "bg-[#FF7E29] text-md underline" : ""
+                isActive("/contact") ? " text-md underline" : ""
               )}
             >
               Contact
