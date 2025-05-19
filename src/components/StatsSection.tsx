@@ -115,19 +115,19 @@ const StatsSection = () => {
   const stats = [
     {
       id: 1,
-      value: "25+",
+      value: "10+",
       label: "Years of experience",
       icon: <BrainIcon className="w-12 h-12 text-blue-800" />,
     },
     {
       id: 2,
-      value: "280+",
+      value: "20+",
       label: "Success Stories",
       icon: <ShieldCheckIcon className="w-12 h-12 text-blue-800" />,
     },
     {
       id: 3,
-      value: "6K+",
+      value: "100+",
       label: "Companies Trust Us",
       icon: <ThumbsUpIcon className="w-12 h-12 text-blue-600" />,
     },
@@ -144,9 +144,9 @@ const StatsSection = () => {
       <div className="container mx-auto px-4">
         {/* Brands Section */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-2 rounded-full bg-pink-500 mb-8">
-            <span className="text-sm font-medium text-white">Brand We</span>
-            <span className="text-sm font-medium text-white ml-1">Work With</span>
+        <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
+            <span className="text-sm font-medium text-primary">BRANDS WE WORK WITH</span>
+            <span className="w-2 h-2 ml-2 bg-primary rounded-full"></span>
           </div>
           
           <div 
