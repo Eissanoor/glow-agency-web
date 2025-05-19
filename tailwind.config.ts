@@ -20,7 +20,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Axiforma", "sans-serif"],
         heading: ["Poppins", "sans-serif"],
       },
       colors: {

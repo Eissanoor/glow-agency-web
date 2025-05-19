@@ -39,7 +39,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold text-primary">
               {/* Glow<span className="text-accent">Tech</span> */}
-              <img src={logo} alt="" className="w-full h-28 object-cover cursor-pointer" />
+              <img src={logo} alt="" className="w-full h-24 object-cover cursor-pointer" />
             </Link>
           </div>
 
