@@ -21,7 +21,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Axiforma", "sans-serif"],
-        heading: ["Poppins", "sans-serif"],
+        heading: ["Axiforma", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
