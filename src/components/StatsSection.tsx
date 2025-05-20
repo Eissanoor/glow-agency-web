@@ -7,6 +7,7 @@ import brand4 from '../assets/tech/brands/brand4.png';
 import brand5 from '../assets/tech/brands/brand5.png';
 import brand6 from '../assets/tech/brands/brand6.png';
 import banner2 from '../assets/tech/banner4.jpg';
+
 const StatsSection = () => {
   const [isInView, setIsInView] = useState(false);
   const [counts, setCounts] = useState<{ [key: string]: number }>({});
@@ -49,7 +50,7 @@ const StatsSection = () => {
       if (!slider) return;
       
       const currentScroll = slider.scrollLeft;
-      const newPosition = currentScroll + 1;
+      const newPosition = currentScroll + 0.5;
       
       // Reset position when we reach the end
       if (newPosition >= totalWidth / 2) {
@@ -117,36 +118,36 @@ const StatsSection = () => {
       id: 1,
       value: "10+",
       label: "Years of experience",
-      icon: <BrainIcon className="w-12 h-12 text-blue-800" />,
+      icon: <BrainIcon className="w-12 h-12 text-blue-800 dark:text-blue-400" />,
     },
     {
       id: 2,
       value: "20+",
       label: "Success Stories",
-      icon: <ShieldCheckIcon className="w-12 h-12 text-blue-800" />,
+      icon: <ShieldCheckIcon className="w-12 h-12 text-blue-800 dark:text-blue-400" />,
     },
     {
       id: 3,
       value: "100+",
       label: "Companies Trust Us",
-      icon: <ThumbsUpIcon className="w-12 h-12 text-blue-600" />,
+      icon: <ThumbsUpIcon className="w-12 h-12 text-blue-600 dark:text-blue-400" />,
     },
     {
       id: 4,
       value: "100%",
       label: "Results Guaranteed",
-      icon: <TargetIcon className="w-12 h-12 text-blue-800" />,
+      icon: <TargetIcon className="w-12 h-12 text-blue-800 dark:text-blue-400" />,
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
+    <section className="py-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900">
       <div className="container mx-auto px-4">
         {/* Brands Section */}
         <div className="text-center mb-16">
-        <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
-            <span className="text-sm font-medium text-primary">BRANDS WE WORK WITH</span>
-            <span className="w-2 h-2 ml-2 bg-primary rounded-full"></span>
+         <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
+             <span className="text-sm font-medium text-primary dark:text-blue-400">BRANDS WE WORK WITH</span>
+             <span className="w-2 h-2 ml-2 bg-primary dark:bg-blue-400 rounded-full"></span>
           </div>
           
           <div 
@@ -157,13 +158,13 @@ const StatsSection = () => {
               {brands.map((brand) => (
                 <div 
                   key={brand.id} 
-                  className="brand-item inline-block p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                  className="brand-item inline-block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
                   style={{ width: '180px', height: '80px' }}
                 >
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="h-full w-full object-contain"
+                    className="h-full w-full object-contain dark:filter dark:brightness-90 dark:invert-[0.15]"
                   />
                 </div>
               ))}
@@ -177,17 +178,17 @@ const StatsSection = () => {
             {stats.map((stat) => (
               <div
                 key={stat.id}
-                className="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300"
               >
                 <div className="mb-6">{stat.icon}</div>
-                <div className="text-4xl font-bold text-gray-900 mb-2">
+                <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
                   {isInView ? (
                     counts[stat.id] + stat.value.replace(/[0-9]/g, '')
                   ) : (
                     '0' + stat.value.replace(/[0-9]/g, '')
                   )}
                 </div>
-                <div className="text-gray-600 text-lg">{stat.label}</div>
+                <div className="text-gray-600 dark:text-gray-300 text-lg">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -198,9 +199,13 @@ const StatsSection = () => {
               <img 
                 src={banner2} 
                 alt="Team members" 
-                className="absolute  h-full w-full opacity-90"
+                className="absolute h-full w-full opacity-90 dark:opacity-80"
               />
-             
+              <div className="absolute inset-0 bg-blue-600/40 dark:bg-blue-900/60"></div>
+              <div className="relative z-10 text-center p-8">
+                <h3 className="text-5xl font-bold mb-3 text-white">12000+</h3>
+                <p className="text-xl text-white">employees in 30 countries in Europe</p>
+              </div>
             </div>
           </div>
         </div>
