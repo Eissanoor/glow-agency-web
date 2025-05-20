@@ -86,6 +86,7 @@ const ServicesSection = () => {
       className: "uxui",
       icon: "🎨",
     },
+   
   ];
 
   return (
@@ -195,6 +196,7 @@ const ServicesSection = () => {
                     </span>
                   ))}
                 </div>
+                
               </div>
             </div>
           </Card>
