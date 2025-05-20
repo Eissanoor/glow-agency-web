@@ -181,7 +181,7 @@ const StatsSection = () => {
             {stats.map((stat) => (
               <div
                 key={stat.id}
-                className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group hover:-translate-y-1"
+                className="bg-white dark:bg-gray-700 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group hover:-translate-y-1"
               >
                 <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 inline-block mb-6 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">{stat.icon}</div>
                 <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
