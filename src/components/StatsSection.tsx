@@ -204,12 +204,9 @@ const StatsSection = () => {
                 alt="Team members" 
                 className="absolute h-full w-full object-cover opacity-90 dark:opacity-70"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/70 to-blue-500/40 dark:from-blue-900/80 dark:to-blue-800/50"></div>
+              
               <div className="relative z-10 text-center p-8">
-                <div className="bg-white/20 dark:bg-white/10 backdrop-blur-sm p-5 rounded-xl">
-                  <h3 className="text-5xl font-bold mb-3 text-white">12000+</h3>
-                  <p className="text-xl text-white">employees in 30 countries</p>
-                </div>
+                
               </div>
             </div>
           </div>
