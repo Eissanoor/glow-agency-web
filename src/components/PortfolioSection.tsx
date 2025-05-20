@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const PortfolioSection = () => {
   const projects = [
@@ -24,9 +25,13 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="portfolio" className="py-24 bg-slate-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
+            <span className="text-sm font-medium text-primary dark:text-blue-400">OUR PORTFOLIO</span>
+            <span className="w-2 h-2 ml-2 bg-primary dark:bg-blue-400 rounded-full"></span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Our Recent Best Works
           </h2>
@@ -40,25 +45,25 @@ const PortfolioSection = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-transform hover:shadow-lg hover:-translate-y-1"
+              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border border-gray-100 dark:border-gray-700"
             >
               <div className="h-52 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
               <div className="p-6">
-                <span className="text-sm text-primary font-medium">
+                <span className="text-sm font-medium text-primary dark:text-blue-400">
                   {project.category}
                 </span>
                 <h3 className="text-xl font-bold mt-2">{project.title}</h3>
                 <a
                   href="#"
-                  className="mt-4 inline-block font-medium text-primary hover:underline"
+                  className="mt-4 inline-flex items-center font-medium text-primary hover:text-blue-700 dark:hover:text-blue-300"
                 >
-                  View Case Study →
+                  View Case Study <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -66,7 +71,7 @@ const PortfolioSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button>View All Projects</Button>
+          <Button className="bg-primary hover:bg-primary/90 text-white">View All Projects</Button>
         </div>
       </div>
     </section>

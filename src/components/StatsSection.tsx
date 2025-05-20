@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { Brain as BrainIcon, Shield as ShieldCheckIcon, ThumbsUp as ThumbsUpIcon, Target as TargetIcon } from 'lucide-react';
 import brand1 from '../assets/tech/brands/brand1.png';
@@ -118,13 +119,13 @@ const StatsSection = () => {
       id: 1,
       value: "10+",
       label: "Years of experience",
-      icon: <BrainIcon className="w-12 h-12 text-blue-800 dark:text-blue-400" />,
+      icon: <BrainIcon className="w-12 h-12 text-blue-600 dark:text-blue-400" />,
     },
     {
       id: 2,
       value: "20+",
       label: "Success Stories",
-      icon: <ShieldCheckIcon className="w-12 h-12 text-blue-800 dark:text-blue-400" />,
+      icon: <ShieldCheckIcon className="w-12 h-12 text-blue-600 dark:text-blue-400" />,
     },
     {
       id: 3,
@@ -136,19 +137,21 @@ const StatsSection = () => {
       id: 4,
       value: "100%",
       label: "Results Guaranteed",
-      icon: <TargetIcon className="w-12 h-12 text-blue-800 dark:text-blue-400" />,
+      icon: <TargetIcon className="w-12 h-12 text-blue-600 dark:text-blue-400" />,
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900">
+    <section className="py-24 bg-gradient-to-b from-blue-50/50 to-white dark:from-gray-900/50 dark:to-gray-900 relative">
+      <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white to-transparent dark:from-gray-900 dark:to-transparent"></div>
       <div className="container mx-auto px-4">
         {/* Brands Section */}
-        <div className="text-center mb-16">
-         <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
-             <span className="text-sm font-medium text-primary dark:text-blue-400">BRANDS WE WORK WITH</span>
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
+             <span className="text-sm font-medium text-primary dark:text-blue-400">TRUSTED PARTNERS</span>
              <span className="w-2 h-2 ml-2 bg-primary dark:bg-blue-400 rounded-full"></span>
           </div>
+          <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Brands We Work With</h2>
           
           <div 
             ref={brandContainerRef}
@@ -173,14 +176,14 @@ const StatsSection = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-12 gap-6">
-          <div ref={sectionRef} className="col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-12 gap-8">
+          <div ref={sectionRef} className="col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
             {stats.map((stat) => (
               <div
                 key={stat.id}
-                className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300"
+                className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group hover:-translate-y-1"
               >
-                <div className="mb-6">{stat.icon}</div>
+                <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 inline-block mb-6 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">{stat.icon}</div>
                 <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
                   {isInView ? (
                     counts[stat.id] + stat.value.replace(/[0-9]/g, '')
@@ -199,12 +202,14 @@ const StatsSection = () => {
               <img 
                 src={banner2} 
                 alt="Team members" 
-                className="absolute h-full w-full opacity-90 dark:opacity-80"
+                className="absolute h-full w-full object-cover opacity-90 dark:opacity-70"
               />
-              <div className="absolute inset-0 bg-blue-600/40 dark:bg-blue-900/60"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/70 to-blue-500/40 dark:from-blue-900/80 dark:to-blue-800/50"></div>
               <div className="relative z-10 text-center p-8">
-                <h3 className="text-5xl font-bold mb-3 text-white">12000+</h3>
-                <p className="text-xl text-white">employees in 30 countries in Europe</p>
+                <div className="bg-white/20 dark:bg-white/10 backdrop-blur-sm p-5 rounded-xl">
+                  <h3 className="text-5xl font-bold mb-3 text-white">12000+</h3>
+                  <p className="text-xl text-white">employees in 30 countries</p>
+                </div>
               </div>
             </div>
           </div>

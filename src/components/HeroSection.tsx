@@ -1,49 +1,63 @@
 
 import { Button } from "@/components/ui/button";
-import banerlog from "../assets/tech/Barner2.jpg"
+import bannerImg from "../assets/tech/Barner2.jpg";
+import { ChevronRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="pt-32 pb-20 hero-gradient">
+    <section className="pt-32 pb-28 hero-gradient relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent dark:from-blue-950/30 dark:to-transparent -z-10"></div>
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0 md:pr-10 animate-fade-up">
+            <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
+              <span className="text-sm font-medium text-primary dark:text-blue-400">Innovative Solutions</span>
+              <span className="w-2 h-2 ml-2 bg-primary dark:bg-blue-400 rounded-full"></span>
+            </div>
+            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Grow your Business with{" "}
-              <span className="text-primary">Organic &amp; IT Solution</span>{" "}
+              <span className="text-primary bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-blue-200">Organic &amp; IT Solution</span>{" "}
               Technology
             </h1>
+            
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
-              We help businesses transform through technology with custom software, 
-              web development, and advanced IT solutions.
+              We help businesses transform through cutting-edge technology with custom software, 
+              web development, and advanced IT solutions designed for your success.
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="px-8">Get Started</Button>
-              {/* <Button size="lg" variant="outline" className="px-8">
+              <Button size="lg" className="px-8 font-medium bg-primary hover:bg-primary/90 text-white">
+                Get Started <ChevronRight className="ml-1 h-4 w-4" />
+              </Button>
+              <Button size="lg" variant="outline" className="px-8 font-medium border-primary/20 hover:bg-primary/5 dark:border-blue-700 dark:hover:bg-blue-900/30">
                 Learn More
-              </Button> */}
+              </Button>
             </div>
-            <div className="mt-10 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-              <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs">JD</div>
-                <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs">KL</div>
-                <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs">MN</div>
+            
+            <div className="mt-10 flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+              <div className="flex -space-x-3">
+                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs ring-2 ring-white dark:ring-gray-900 shadow-sm">JD</div>
+                <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs ring-2 ring-white dark:ring-gray-900 shadow-sm">KL</div>
+                <div className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white text-xs ring-2 ring-white dark:ring-gray-900 shadow-sm">MN</div>
+                <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center text-white text-xs ring-2 ring-white dark:ring-gray-900 shadow-sm">+5</div>
               </div>
-              <span>Trusted by 100+ clients worldwide</span>
+              <span className="font-medium">Trusted by 100+ clients worldwide</span>
             </div>
           </div>
 
           <div className="md:w-1/2 relative animate-fade-in">
-            <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-3 shadow-xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl transform rotate-3 scale-105 dark:from-blue-900/40 dark:to-accent/40"></div>
+            <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-3 shadow-xl transform transition-transform hover:-translate-y-1 duration-300">
               <img
-                src={banerlog}
+                src={bannerImg}
                 alt="IT Solutions"
-                className="rounded-xl w-full"
+                className="rounded-xl w-full object-cover"
               />
               
-              <div className="absolute -bottom-6 -right-6 bg-accent rounded-2xl p-4 shadow-lg text-white">
+              <div className="absolute -bottom-6 -right-6 bg-accent rounded-2xl p-4 shadow-lg text-white dark:shadow-accent/20">
                 <div className="text-3xl font-bold">10+</div>
-                <div className="text-sm">Years Experience</div>
+                <div className="text-sm font-medium">Years Experience</div>
               </div>
             </div>
           </div>
