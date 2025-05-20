@@ -161,7 +161,7 @@ const StatsSection = () => {
               {brands.map((brand) => (
                 <div 
                   key={brand.id} 
-                  className="brand-item inline-block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                  className="brand-item inline-block p-6 bg-white dark:bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
                   style={{ width: '180px', height: '80px' }}
                 >
                   <img
