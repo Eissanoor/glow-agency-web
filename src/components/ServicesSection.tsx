@@ -201,9 +201,9 @@ const ServicesSection = () => {
         </div>
         
         <div className="flex justify-center mt-12">
-          <Button as={Link} to="/services" className="flex items-center gap-2 bg-primary hover:bg-primary/90">
+          <Link to="/services" className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground inline-flex h-10 px-4 py-2 rounded-md text-sm font-medium transition-colors">
             MORE SERVICES <ArrowRight className="h-4 w-4" />
-          </Button>
+          </Link>
         </div>
       </div>
     </section>
