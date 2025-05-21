@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -42,20 +43,37 @@ const TestimonialsSection = () => {
   return (
     <section id="testimonials" className="py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            What clients say
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300">
-            Don't just take our word for it - hear from some of our satisfied
-            clients about their experiences working with GlowTech.
-          </p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              What clients say
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300">
+              Don't just take our word for it - hear from some of our satisfied
+              clients about their experiences working with GlowTech.
+            </p>
+          </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial) => (
-            <div
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, staggerChildren: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
+          {testimonials.map((testimonial, index) => (
+            <motion.div
               key={testimonial.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm border border-gray-100 dark:border-gray-700"
             >
               <div className="flex items-center mb-6">
@@ -74,9 +92,9 @@ const TestimonialsSection = () => {
               <blockquote className="text-gray-600 dark:text-gray-300">
                 "{testimonial.content}"
               </blockquote>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

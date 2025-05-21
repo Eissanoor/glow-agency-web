@@ -6,8 +6,9 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion";
 const ServicesSection = ({ showAll = false }) => {
-  
+
   const [animatedCards, setAnimatedCards] = useState<Set<number>>(new Set());
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -107,20 +108,28 @@ const ServicesSection = ({ showAll = false }) => {
       icon: "📱",
     },
   ];
-  
-  
-    const displayedServices = showAll ? services : services.slice(0, 6);
+
+
+  const displayedServices = showAll ? services : services.slice(0, 6);
   return (
     <section id="services" className="py-24 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
-            Featured Services
-          </h2>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
+        >
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
+              Featured Services
+            </h2>
+          </div>
+
+        </motion.div>
 
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
-          {/* {services.slice(0, 3).map((service, index) => (
+        {/* {services.slice(0, 3).map((service, index) => (
             <Card
               key={service.id}
               data-card-id={service.id}
@@ -160,54 +169,54 @@ const ServicesSection = ({ showAll = false }) => {
               </div>
             </Card>
           ))} */}
-          
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
-            {displayedServices.map((service, index) => (
-              <Card
-                key={service.id}
-                data-card-id={service.id}
-                className={`service-card overflow-hidden border-0 rounded-2xl ${service.className} ${getAnimationClass(index + 1)}`}
-              >
-                <div className={`${service.color} relative p-8 text-white h-full`}>
-                  <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-pattern-world"></div>
-                  
-                  <div className="relative z-10 flex justify-between h-full">
-                    <div className="flex flex-col justify-between">
-                      <div>
-                        <div className="mb-4">
-                          {typeof service.icon === 'string' ? (
-                            <span className="text-3xl">{service.icon}</span>
-                          ) : (
-                            service.icon
-                          )}
-                        </div>
-                        <h3 className="text-2xl font-bold mb-4 text-white">
-                          {service.title}
-                        </h3>
+
+        <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
+          {displayedServices.map((service, index) => (
+            <Card
+              key={service.id}
+              data-card-id={service.id}
+              className={`service-card overflow-hidden border-0 rounded-2xl ${service.className} ${getAnimationClass(index + 1)}`}
+            >
+              <div className={`${service.color} relative p-8 text-white h-full`}>
+                <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-pattern-world"></div>
+
+                <div className="relative z-10 flex justify-between h-full">
+                  <div className="flex flex-col justify-between">
+                    <div>
+                      <div className="mb-4">
+                        {typeof service.icon === 'string' ? (
+                          <span className="text-3xl">{service.icon}</span>
+                        ) : (
+                          service.icon
+                        )}
                       </div>
-                      
-                      <Link to="/services" className="rounded-full bg-white/20 p-3 hover:bg-white/30 transition-colors mt-4 self-start">
-                        <ArrowRight className="h-5 w-5 text-white" />
-                      </Link>
+                      <h3 className="text-2xl font-bold mb-4 text-white">
+                        {service.title}
+                      </h3>
                     </div>
-                    
-                    <div className="flex flex-col items-end justify-end">
-                      <div className="flex flex-col gap-2 items-end">
-                        {service.tags.map((tag, idx) => (
-                          <span key={idx} className="px-4 py-2 rounded-full bg-white/20 text-sm font-medium">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+
+                    <Link to="/services" className="rounded-full bg-white/20 p-3 hover:bg-white/30 transition-colors mt-4 self-start">
+                      <ArrowRight className="h-5 w-5 text-white" />
+                    </Link>
+                  </div>
+
+                  <div className="flex flex-col items-end justify-end">
+                    <div className="flex flex-col gap-2 items-end">
+                      {service.tags.map((tag, idx) => (
+                        <span key={idx} className="px-4 py-2 rounded-full bg-white/20 text-sm font-medium">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </Card>
-            ))}
-          </div>
+              </div>
+            </Card>
+          ))}
+        </div>
         {/* </div> */}
-        
-            {!showAll && (
+
+        {!showAll && (
           <div className="flex justify-center mt-12">
             <Link to="/services" className=" items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground inline-flex h-10 px-4 py-2 rounded-md text-sm font-medium transition-colors">
               MORE SERVICES <ArrowRight className="h-4 w-4" />

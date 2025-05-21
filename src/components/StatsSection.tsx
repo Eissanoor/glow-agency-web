@@ -8,7 +8,7 @@ import brand4 from '../assets/tech/brands/brand4.png';
 import brand5 from '../assets/tech/brands/brand5.png';
 import brand6 from '../assets/tech/brands/brand6.png';
 import banner2 from '../assets/tech/banner4.jpg';
-
+import { motion } from "framer-motion";
 const StatsSection = () => {
   const [isInView, setIsInView] = useState(false);
   const [counts, setCounts] = useState<{ [key: string]: number }>({});
@@ -147,11 +147,27 @@ const StatsSection = () => {
       <div className="container mx-auto px-4">
         {/* Brands Section */}
         <div className="text-center mb-20">
+             <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
+        >
           <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
              <span className="text-sm font-medium text-primary dark:text-blue-400">TRUSTED PARTNERS</span>
              <span className="w-2 h-2 ml-2 bg-primary dark:bg-blue-400 rounded-full"></span>
           </div>
+
+        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9 }}
+          >
+
           <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Brands We Work With</h2>
+        </motion.div>
           
           <div 
             ref={brandContainerRef}
@@ -176,7 +192,14 @@ const StatsSection = () => {
         </div>
 
         {/* Stats Section */}
+           <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
+        >
         <div className="grid grid-cols-12 gap-8">
+          
           <div ref={sectionRef} className="col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
             {stats.map((stat) => (
               <div
@@ -211,6 +234,8 @@ const StatsSection = () => {
             </div>
           </div>
         </div>
+
+        </motion.div>
       </div>
     </section>
   );

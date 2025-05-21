@@ -1,11 +1,10 @@
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Minus, Plus } from "lucide-react";
+import { motion } from "framer-motion";
 
 const FAQSection = () => {
   const faqs = [
@@ -87,42 +86,62 @@ const FAQSection = () => {
   return (
     <section className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
-            <span className="text-sm font-medium text-primary">F.A.Q.</span>
-            <span className="w-2 h-2 ml-2 bg-primary rounded-full"></span>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
+              <span className="text-sm font-medium text-primary">F.A.Q.</span>
+              <span className="w-2 h-2 ml-2 bg-primary rounded-full"></span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Need a <span className="text-primary">Support?</span>
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Need a <span className="text-primary">Support?</span>
-          </h2>
-        </div>
+        </motion.div>
 
-        <div className="max-w-3xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, staggerChildren: 0.2 }}
+          className="max-w-3xl mx-auto"
+        >
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800"
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <AccordionTrigger className="px-6 py-4 flex hover:no-underline text-left">
-                  <div className="flex-1 flex items-center text-lg font-medium">
-                    <span className="mr-4 text-gray-700 dark:text-gray-300">Q.</span>
-                    {faq.question}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 py-4 pt-0 bg-blue-50 dark:bg-blue-900/20">
-                  <div className="flex">
-                    <span className="mr-4 text-2xl font-bold text-primary">A.</span>
-                    <div className="text-gray-700 dark:text-gray-300">
-                      {faq.answer}
+                <AccordionItem 
+                  value={`item-${index}`}
+                  className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800"
+                >
+                  <AccordionTrigger className="px-6 py-4 flex hover:no-underline text-left">
+                    <div className="flex-1 flex items-center text-lg font-medium">
+                      <span className="mr-4 text-gray-700 dark:text-gray-300">Q.</span>
+                      {faq.question}
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 py-4 pt-0 bg-blue-50 dark:bg-blue-900/20">
+                    <div className="flex">
+                      <span className="mr-4 text-2xl font-bold text-primary">A.</span>
+                      <div className="text-gray-700 dark:text-gray-300">
+                        {faq.answer}
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </motion.div>
             ))}
           </Accordion>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

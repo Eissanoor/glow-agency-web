@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { motion } from "framer-motion";
 import {
   SiJavascript,
   SiReact,
@@ -23,12 +24,9 @@ import {
 } from "react-icons/si";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import { FaGitAlt } from "react-icons/fa";
+import { FaVuejs } from "react-icons/fa6";
 import Cursorailogo from "../assets/tech/useTechnologies/Cursorai.jpg";
 import windsurflogo from "../assets/tech/useTechnologies/windsurf.jpg";
-import { FaVuejs } from "react-icons/fa6";
-
-
-
 
 const TechnologiesSection = () => {
   const [activeTab, setActiveTab] = useState("web");
@@ -67,7 +65,6 @@ const TechnologiesSection = () => {
         { name: "Java", icon: <SiNodedotjs className="w-12 h-12 text-red-600" /> },
         { name: "Android", icon: <SiAndroid className="w-12 h-12 text-green-500" /> },
         { name: "iOS", icon: <SiApple className="w-12 h-12 text-gray-800 dark:text-gray-200" /> },
-        
       ],
     },
     {
@@ -91,15 +88,22 @@ const TechnologiesSection = () => {
   return (
     <section className="py-16 bg-blue-50 dark:bg-blue-950/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
-            <span className="text-sm font-medium text-primary">OUR TECHNOLOGIES</span>
-            <span className="w-2 h-2 ml-2 bg-primary rounded-full"></span>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9 }}
+        >
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
+              <span className="text-sm font-medium text-primary">OUR TECHNOLOGIES</span>
+              <span className="w-2 h-2 ml-2 bg-primary rounded-full"></span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              We Use <span className="text-primary">Technologies</span>
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            We Use <span className="text-primary">Technologies</span>
-          </h2>
-        </div>
+        </motion.div>
 
         <Tabs defaultValue="web" className="w-full max-w-4xl mx-auto">
           <TabsList className="grid grid-cols-2 md:grid-cols-5 gap-2 bg-blue-100/50 dark:bg-blue-900/20 p-1 rounded-lg mb-8">
@@ -117,9 +121,19 @@ const TechnologiesSection = () => {
 
           {techCategories.map((category) => (
             <TabsContent key={category.id} value={category.id}>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              <motion.div
+                key={category.id}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.5 }}
+                className="grid grid-cols-2 sm:grid-cols-4 gap-6"
+              >
                 {category.technologies.map((tech, index) => (
-                  <Card key={index} className="bg-white dark:bg-slate-800 border-0 shadow-sm hover:shadow-md transition-shadow">
+                  <Card
+                    key={index}
+                    className="bg-white dark:bg-slate-800 border-0 shadow-sm hover:shadow-md transition-shadow"
+                  >
                     <CardContent className="flex flex-col items-center justify-center p-6">
                       <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-full mb-4">
                         {tech.icon}
@@ -128,7 +142,7 @@ const TechnologiesSection = () => {
                     </CardContent>
                   </Card>
                 ))}
-              </div>
+              </motion.div>
             </TabsContent>
           ))}
         </Tabs>
