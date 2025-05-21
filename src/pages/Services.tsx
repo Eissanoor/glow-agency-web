@@ -72,7 +72,7 @@ const Services = () => {
         </div>
 
         {/* Services Overview */}
-        <ServicesSection />
+        <ServicesSection showAll={true}/>
 
         {/* Service Process Section */}
         <section className="py-16">

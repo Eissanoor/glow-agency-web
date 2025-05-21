@@ -6,7 +6,7 @@ const PortfolioSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Finance Dashboard",
+      title: "Global Standard Technology (GST)",
       category: "Web Development",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500",
     },

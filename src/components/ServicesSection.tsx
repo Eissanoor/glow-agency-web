@@ -6,9 +6,11 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 
-const ServicesSection = () => {
+const ServicesSection = ({ showAll = false }) => {
+  
   const [animatedCards, setAnimatedCards] = useState<Set<number>>(new Set());
   const sectionRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -94,9 +96,20 @@ const ServicesSection = () => {
       color: "bg-purple-700",
       className: "ai-services",
       icon: <Brain className="h-8 w-8 text-white" />,
-    }
+    },
+    {
+      id: 7,
+      title: "Mobile App Development",
+      description: "Custom mobile app development for iOS and Android platforms with seamless user experiences.",
+      tags: ["iOS", "Android"],
+      color: "bg-green-500",
+      className: "mobile-app-dev",
+      icon: "📱",
+    },
   ];
-
+  
+  
+    const displayedServices = showAll ? services : services.slice(0, 6);
   return (
     <section id="services" className="py-24 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
@@ -106,8 +119,8 @@ const ServicesSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.slice(0, 3).map((service, index) => (
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
+          {/* {services.slice(0, 3).map((service, index) => (
             <Card
               key={service.id}
               data-card-id={service.id}
@@ -146,14 +159,14 @@ const ServicesSection = () => {
                 </div>
               </div>
             </Card>
-          ))}
+          ))} */}
           
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
-            {services.slice(3, 6).map((service, index) => (
+            {displayedServices.map((service, index) => (
               <Card
                 key={service.id}
                 data-card-id={service.id}
-                className={`service-card overflow-hidden border-0 rounded-2xl ${service.className} ${getAnimationClass(index + 3)}`}
+                className={`service-card overflow-hidden border-0 rounded-2xl ${service.className} ${getAnimationClass(index + 1)}`}
               >
                 <div className={`${service.color} relative p-8 text-white h-full`}>
                   <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-pattern-world"></div>
@@ -192,13 +205,15 @@ const ServicesSection = () => {
               </Card>
             ))}
           </div>
-        </div>
+        {/* </div> */}
         
-        <div className="flex justify-center mt-12">
-          <Link to="/services" className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground inline-flex h-10 px-4 py-2 rounded-md text-sm font-medium transition-colors">
-            MORE SERVICES <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
+            {!showAll && (
+          <div className="flex justify-center mt-12">
+            <Link to="/services" className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground inline-flex h-10 px-4 py-2 rounded-md text-sm font-medium transition-colors">
+              MORE SERVICES <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
