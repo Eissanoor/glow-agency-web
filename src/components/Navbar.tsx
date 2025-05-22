@@ -8,6 +8,7 @@ import NavbarMobileMenu from "./navbar/NavbarMobileMenu";
 import { services, company } from "./navbar/NavbarData";
 import { Link } from "react-router-dom";
 import logo from "../assets/tech/logo/logo4.png";
+import { ChevronRight } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,12 +48,10 @@ const Navbar = () => {
 
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <Button 
-              className="hidden md:flex bg-primary hover:bg-primary/90 text-white" 
-              size="sm"
-            >
-              Get Started
-            </Button>
+           <Link to="/contact" className="items-center gap-2 bg-primary hover:bg-primary/90  inline-flex h-10 px-4 py-2 rounded-md text-sm font-medium transition-colors text-white   ">
+                Get Started 
+              </Link>
+
             <button
               className="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}

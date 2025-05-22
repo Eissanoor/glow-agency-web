@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import bannerImg from "../assets/tech/Barner2.jpg";
 import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -35,16 +36,12 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="px-8 font-medium bg-primary hover:bg-primary/90 text-white">
-                Get Started <ChevronRight className="ml-1 h-4 w-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="px-8 font-medium border-primary/20 hover:bg-primary/5 dark:border-blue-700 dark:hover:bg-blue-900/30"
-              >
+              <Link to="/contact" className="px-8 flex my-auto py-2 rounded font-medium bg-primary hover:bg-primary/90 text-white">
+                Get Started <ChevronRight className="ml-1 h-4 w-4 my-auto" />
+              </Link>
+              <Link to="/about" className="px-8 flex my-auto py-2 rounded font-medium hover:bg-white text-primary border border-primary hover:bg-primary/5">
                 Learn More
-              </Button>
+              </Link>
             </div>
 
             <div className="mt-10 flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
