@@ -1,18 +1,18 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Testimonials = () => {
-  // Featured testimonials data (expanded beyond what's in TestimonialsSection)
   const featuredTestimonials = [
     {
       id: 1,
       name: "Lisa Rodriguez",
       position: "Marketing Director, Global Ventures",
-      content: "The team at GlowTech exceeded our expectations in every way. They took the time to understand our brand and delivered a website that perfectly captures our vision. The site has significantly improved our online presence and customer engagement.",
+      content:
+        "The team at E&Z Tech Solution exceeded our expectations in every way. They took the time to understand our brand and delivered a website that perfectly captures our vision. The site has significantly improved our online presence and customer engagement.",
       avatar: "LR",
       color: "bg-indigo-500",
       rating: 5,
@@ -21,29 +21,31 @@ const Testimonials = () => {
       id: 2,
       name: "Alex Johnson",
       position: "CEO, Tech Innovators",
-      content: "Working with GlowTech transformed our business completely. Their web development team created a stunning website that has significantly improved our conversion rates. The ongoing support has been exceptional, and we couldn't be happier with the results.",
+      content:
+        "Working with E&Z Tech Solution transformed our business completely. Their web development team created a stunning website that has significantly improved our conversion rates. The ongoing support has been exceptional, and we couldn't be happier with the results.",
       avatar: "AJ",
       color: "bg-blue-500",
       rating: 5,
-    }
+    },
   ];
-  
-  // Video testimonials
+
   const videoTestimonials = [
     {
       id: 1,
       name: "Sarah Johnson",
       position: "Marketing Director, Bright Ideas",
-      thumbnail: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=500",
+      thumbnail:
+        "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=500",
       videoUrl: "#",
     },
     {
       id: 2,
       name: "Michael Chen",
       position: "CTO, Future Systems",
-      thumbnail: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?auto=format&fit=crop&q=80&w=500",
+      thumbnail:
+        "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?auto=format&fit=crop&q=80&w=500",
       videoUrl: "#",
-    }
+    },
   ];
 
   return (
@@ -51,7 +53,12 @@ const Testimonials = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <div className="bg-primary text-white py-20 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="bg-primary text-white py-20 text-center"
+        >
           <div className="container mx-auto px-4">
             <div className="inline-flex items-center px-4 py-1 rounded-full bg-primary-foreground/20 mb-4">
               <span className="text-sm font-medium text-white">TESTIMONIALS</span>
@@ -62,10 +69,16 @@ const Testimonials = () => {
               Don't take our word for it. See what our clients have to say about their experience working with us.
             </p>
           </div>
-        </div>
-        
+        </motion.div>
+
         {/* Featured Testimonials */}
-        <section className="py-16">
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="py-16"
+        >
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
@@ -77,11 +90,21 @@ const Testimonials = () => {
                 Read what our clients have to say about their experience working with us.
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {featuredTestimonials.map((testimonial) => (
-                <div
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, staggerChildren: 0.2 }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-12"
+            >
+              {featuredTestimonials.map((testimonial, index) => (
+                <motion.div
                   key={testimonial.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-md border border-gray-100 dark:border-gray-700"
                 >
                   <div className="flex justify-between items-start mb-6">
@@ -107,15 +130,23 @@ const Testimonials = () => {
                   <blockquote className="text-gray-600 dark:text-gray-300 italic text-lg mb-6">
                     "{testimonial.content}"
                   </blockquote>
-                  <a href="#" className="text-primary font-medium hover:underline">Read Full Story →</a>
-                </div>
+                  {/* <a href="#" className="text-primary font-medium hover:underline">
+                    Read Full Story →
+                  </a> */}
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
-        </section>
-        
+        </motion.section>
+
         {/* Video Testimonials */}
-        <section className="py-16 bg-gray-50 dark:bg-gray-900/50">
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="py-16 bg-gray-50 dark:bg-gray-900/50"
+        >
           <div className="container mx-auto px-4">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <div className="inline-flex items-center px-4 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 mb-4">
@@ -127,11 +158,21 @@ const Testimonials = () => {
                 Watch these video testimonials to learn more about how we've helped our clients succeed.
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {videoTestimonials.map((video) => (
-                <div
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, staggerChildren: 0.2 }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            >
+              {videoTestimonials.map((video, index) => (
+                <motion.div
                   key={video.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md"
                 >
                   <div className="relative h-60 overflow-hidden">
@@ -169,20 +210,28 @@ const Testimonials = () => {
                       Watch Testimonial →
                     </a>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
-        </section>
-        
+        </motion.section>
+
         {/* All Testimonials */}
         <TestimonialsSection />
-        
+
         {/* CTA Section */}
-        <section className="py-16">
+        {/* <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="py-16"
+        >
           <div className="container mx-auto px-4">
             <div className="bg-primary rounded-xl p-10 text-white text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Our Service?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Ready to Experience Our Service?
+              </h2>
               <p className="mb-8 max-w-2xl mx-auto">
                 Join our satisfied clients and discover how we can help your business succeed in the digital landscape.
               </p>
@@ -191,7 +240,7 @@ const Testimonials = () => {
               </Button>
             </div>
           </div>
-        </section>
+        </motion.section> */}
       </main>
       <Footer />
     </div>

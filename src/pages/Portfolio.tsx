@@ -1,14 +1,15 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const Portfolio = () => {
   // Filter categories
   const categories = ["All", "Web Development", "Mobile App", "UI/UX Design", "E-commerce"];
   const [activeCategory, setActiveCategory] = useState("All");
-  
+
   // Portfolio projects data
   const projects = [
     {
@@ -17,7 +18,7 @@ const Portfolio = () => {
       category: "Web Development",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500",
       client: "FinTech Inc.",
-      description: "Interactive financial dashboard with real-time data visualization and reporting features."
+      description: "Interactive financial dashboard with real-time data visualization and reporting features.",
     },
     {
       id: 2,
@@ -25,7 +26,7 @@ const Portfolio = () => {
       category: "Mobile App",
       image: "https://images.unsplash.com/photo-1621274282562-9bced5572257?auto=format&fit=crop&q=80&w=500",
       client: "MediCare",
-      description: "Mobile application for tracking health metrics, appointments, and medication schedules."
+      description: "Mobile application for tracking health metrics, appointments, and medication schedules.",
     },
     {
       id: 3,
@@ -33,7 +34,7 @@ const Portfolio = () => {
       category: "E-commerce",
       image: "https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80&w=500",
       client: "ShopSmart",
-      description: "Full-featured e-commerce platform with inventory management, payment processing, and analytics."
+      description: "Full-featured e-commerce platform with inventory management, payment processing, and analytics.",
     },
     {
       id: 4,
@@ -41,7 +42,7 @@ const Portfolio = () => {
       category: "UI/UX Design",
       image: "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?auto=format&fit=crop&q=80&w=500",
       client: "Wanderlust Travel",
-      description: "User-friendly interface design for a travel booking platform with intuitive navigation and booking flow."
+      description: "User-friendly interface design for a travel booking platform with intuitive navigation and booking flow.",
     },
     {
       id: 5,
@@ -49,7 +50,7 @@ const Portfolio = () => {
       category: "Web Development",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=500",
       client: "PropertyPro",
-      description: "Web-based real estate marketplace with property listings, advanced search, and agent connections."
+      description: "Web-based real estate marketplace with property listings, advanced search, and agent connections.",
     },
     {
       id: 6,
@@ -57,21 +58,26 @@ const Portfolio = () => {
       category: "Mobile App",
       image: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&q=80&w=500",
       client: "Quick Bites",
-      description: "Mobile application for food ordering and delivery with real-time tracking and payment processing."
+      description: "Mobile application for food ordering and delivery with real-time tracking and payment processing.",
     },
   ];
-  
+
   // Filter projects based on active category
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
+  const filteredProjects = activeCategory === "All"
+    ? projects
+    : projects.filter((project) => project.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
         {/* Hero Section */}
-        <div className="bg-primary text-white py-20 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="bg-primary text-white py-20 text-center"
+        >
           <div className="container mx-auto px-4">
             <div className="inline-flex items-center px-4 py-1 rounded-full bg-primary-foreground/20 mb-4">
               <span className="text-sm font-medium text-white">PORTFOLIO</span>
@@ -79,19 +85,29 @@ const Portfolio = () => {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Work</h1>
             <p className="max-w-2xl mx-auto text-white/80">
-              Explore our portfolio of successful projects delivered with excellence and innovation. 
+              Explore our portfolio of successful projects delivered with excellence and innovation.
               Each project represents our commitment to quality and client satisfaction.
             </p>
           </div>
-        </div>
-        
+        </motion.div>
+
         {/* Portfolio Filter */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex flex-wrap justify-center gap-4 mb-12"
+            >
               {categories.map((category, index) => (
-                <button
+                <motion.button
                   key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`px-6 py-2 rounded-full text-sm font-medium transition ${
                     activeCategory === category
                       ? "bg-primary text-white"
@@ -100,15 +116,25 @@ const Portfolio = () => {
                   onClick={() => setActiveCategory(category)}
                 >
                   {category}
-                </button>
+                </motion.button>
               ))}
-            </div>
-            
+            </motion.div>
+
             {/* Portfolio Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project) => (
-                <div
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, staggerChildren: 0.2 }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {filteredProjects.map((project, index) => (
+                <motion.div
                   key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm transition-transform hover:shadow-lg hover:-translate-y-1"
                 >
                   <div className="h-56 overflow-hidden">
@@ -138,18 +164,30 @@ const Portfolio = () => {
                       </a>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-            
-            <div className="text-center mt-12">
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mt-12"
+            >
               <Button>Load More Projects</Button>
-            </div>
+            </motion.div>
           </div>
         </section>
-        
+
         {/* CTA Section */}
-        <section className="py-16 bg-primary text-white">
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="py-16 bg-primary text-white"
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
@@ -157,16 +195,16 @@ const Portfolio = () => {
                 Let's collaborate to bring your vision to life with our expertise and innovative solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
+                {/* <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
                   View More Work
-                </Button>
-                <Button className="bg-white text-primary hover:bg-white/90">
-                  Contact Us Now
-                </Button>
+                </Button> */}
+                <Link to="/contact" className="inline-block bg-white text-primary hover:bg-white/90 px-4 py-2 rounded font-medium text-center">
+          Contact Us Now
+        </Link>
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
       </main>
       <Footer />
     </div>

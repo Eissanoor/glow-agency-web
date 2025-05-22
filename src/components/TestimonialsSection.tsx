@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
       name: "John Doe",
       position: "CEO, Tech Innovators",
       content:
-        "Working with GlowTech transformed our business completely. Their web development team created a stunning website that has significantly improved our conversion rates.",
+        "Working with E&Z Tech Solution transformed our business completely. Their web development team created a stunning website that has significantly improved our conversion rates.",
       avatar: "JD",
       color: "bg-blue-500",
     },
@@ -16,7 +16,7 @@ const TestimonialsSection = () => {
       name: "Sarah Johnson",
       position: "Marketing Director, Bright Ideas",
       content:
-        "The mobile app developed by GlowTech exceeded all our expectations. The team was professional, responsive, and delivered a top-quality product on time.",
+        "The mobile app developed by E&Z Tech Solution exceeded all our expectations. The team was professional, responsive, and delivered a top-quality product on time.",
       avatar: "SJ",
       color: "bg-purple-500",
     },
@@ -25,7 +25,7 @@ const TestimonialsSection = () => {
       name: "Michael Chen",
       position: "CTO, Future Systems",
       content:
-        "Their technical expertise and dedication to quality is unmatched. GlowTech has been our trusted technology partner for over 3 years, and they never disappoint.",
+        "Their technical expertise and dedication to quality is unmatched. E&Z Tech Solution has been our trusted technology partner for over 3 years, and they never disappoint.",
       avatar: "MC",
       color: "bg-green-500",
     },
@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
       name: "Emily Parker",
       position: "Product Owner, Insight Analytics",
       content:
-        "The UX/UI design services provided by GlowTech revolutionized our product. Our user satisfaction scores have improved by 45% since implementation.",
+        "The UX/UI design services provided by E&Z Tech Solution revolutionized our product. Our user satisfaction scores have improved by 45% since implementation.",
       avatar: "EP",
       color: "bg-orange-500",
     },
@@ -55,7 +55,7 @@ const TestimonialsSection = () => {
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
               Don't just take our word for it - hear from some of our satisfied
-              clients about their experiences working with GlowTech.
+              clients about their experiences working with E&Z Tech Solution.
             </p>
           </div>
         </motion.div>

@@ -186,7 +186,7 @@ const Careers = () => {
               
               <h2 className="text-3xl md:text-4xl font-bold mb-4">What We Offer</h2>
               <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
-                At GlowTech, we believe in taking care of our most valuable asset—our people.
+                At E&Z Tech Solution, we believe in taking care of our most valuable asset—our people.
               </p>
             </div>
             
