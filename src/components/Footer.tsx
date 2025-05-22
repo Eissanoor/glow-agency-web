@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/tech/logo/logo3.png";
+import logo from "../assets/tech/logo/logo4.png";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <Link to="/" className="text-2xl font-bold mb-6 inline-block">
-              <img src={logo} alt="" className="w-full h-20 object-cover cursor-pointer" />
+              <img src={logo} alt="" className=" bg-white w-full h-20 object-cover cursor-pointer" />
             </Link>
             <p className="text-gray-400 mb-6">
               Empowering businesses with innovative digital solutions and

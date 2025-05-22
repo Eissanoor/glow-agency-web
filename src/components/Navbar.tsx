@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold text-primary">
-              <img src={logo} alt="Company Logo" className="w-full h-20 object-contain cursor-pointer" />
+              <img src={logo} alt="Company Logo" className=" dark:bg-white w-full h-20 object-contain cursor-pointer" />
             </Link>
           </div>
 
