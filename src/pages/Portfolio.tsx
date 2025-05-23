@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const Portfolio = () => {
   // Filter categories
-  const categories = ["All", "Web Development", "Mobile App", "UI/UX Design", "E-commerce"];
+  const categories = ["All", "Web Development", "Mobile App", "UI/UX Design", "E-commerce" , "Software Solution", "Artificial Intelligence"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   // Portfolio projects data
