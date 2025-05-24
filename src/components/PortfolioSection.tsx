@@ -3,7 +3,9 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
+
 const PortfolioSection = () => {
+  
   const projects = [
     {
       id: 1,
@@ -68,7 +70,7 @@ const PortfolioSection = () => {
 
   // Determine items per slide based on screen width
   const [visibleItems, setVisibleItems] = useState(itemsPerSlide.lg);
-  
+   
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
@@ -295,7 +297,7 @@ const PortfolioSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mt-12"
         >
-          <Button className="bg-primary hover:bg-primary/90 text-white">View All Projects</Button>
+           <a href="/portfolio"> <Button className="bg-primary hover:bg-primary/90 text-white">View All Projects</Button></a>
         </motion.div>
       </div>
     </section>
