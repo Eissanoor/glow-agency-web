@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const Portfolio = () => {
   // Filter categories
-  const categories = ["All", "Web Development", "Mobile App", "UI/UX Design", "E-commerce" , "Software Solution", "Artificial Intelligence"];
+  const categories = ["All", "Web Development", "Mobile App", "UI/UX Design", "E-commerce", "Software Solution", "Artificial Intelligence"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   // Portfolio projects data
@@ -68,55 +68,90 @@ const Portfolio = () => {
       client: "Quick Bites",
       description: "Gtrack is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
     },
-      {
-        id: 8,
-        title: "GS1 Project",
-        category: "Artificial Intelligence",
-        image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=500",
-        client: "Quick Bites",
-        description: "GS1 is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
-      },
-      {
-        id: 9,
-        title: "Facility Management System (FMS)",
-        category: "Enterprise Software",
-        image: "https://images.unsplash.com/photo-1624927637280-f033784c1279?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        client: "Quick Bites",
-        description: "Facility Management System (FMS) is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
-      },
-      {
-        id: 10,
-        title: "Queue Management System (QMS)",
-        category: "Software Solution",
-        image: "https://plus.unsplash.com/premium_photo-1682141253489-66b926cb7559?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        client: "Quick Bites",
-        description: "Queue Management System (QMS) is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
-      },
-      {
-        id: 11,
-        title: "POS System",
-        category: "Software Solution",
-        image: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?auto=format&fit=crop&q=80&w=500",
-        client: "Quick Bites",
-        description: "POS System is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
-      },
-      {
-        id: 12,
-        title: "Groute Project",
-        category: "Mobile App",
-        image: "https://images.unsplash.com/photo-1634743556192-d19f0c69ff3a?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        client: "Quick Bites",
-        description: "Groute Project is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
-      },
-      {
-        id: 13,
-        title: "Performance AI Agent (PMS)",
-        category: "Artificial Intelligence",
-        image: "https://plus.unsplash.com/premium_photo-1725907643701-9ba38affe7bb?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        client: "Quick Bites",
-        description: "Performance AI Agent (PMS) is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
-      },
-
+    {
+      id: 8,
+      title: "GS1 Project",
+      category: "Artificial Intelligence",
+      image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=500",
+      client: "Quick Bites",
+      description: "GS1 is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
+    },
+    {
+      id: 9,
+      title: "Facility Management System (FMS)",
+      category: "Enterprise Software",
+      image: "https://images.unsplash.com/photo-1624927637280-f033784c1279?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      client: "Quick Bites",
+      description: "Facility Management System (FMS) is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
+    },
+    {
+      id: 10,
+      title: "Queue Management System (QMS)",
+      category: "Software Solution",
+      image: "https://plus.unsplash.com/premium_photo-1682141253489-66b926cb7559?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      client: "Quick Bites",
+      description: "Queue Management System (QMS) is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
+    },
+    {
+      id: 11,
+      title: "POS System",
+      category: "Software Solution",
+      image: "https://images.unsplash.com/photo-1556742212-5b321f3c261b?auto=format&fit=crop&q=80&w=500",
+      client: "Quick Bites",
+      description: "POS System is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
+    },
+    {
+      id: 12,
+      title: "Groute Project",
+      category: "Mobile App",
+      image: "https://images.unsplash.com/photo-1634743556192-d19f0c69ff3a?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      client: "Quick Bites",
+      description: "Groute Project is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
+    },
+    {
+      id: 13,
+      title: "Performance AI Agent (PMS)",
+      category: "Artificial Intelligence",
+      image: "https://plus.unsplash.com/premium_photo-1725907643701-9ba38affe7bb?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      client: "Quick Bites",
+      description: "Performance AI Agent (PMS) is a web application for tracking and managing vehicles, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
+    },
+    {
+      id: 14,
+      title: "GST ",
+      category: "Software Solution",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80", // Use the GST logo or a relevant image
+      client: "GSTSA",
+      description: "Official web portal for GST , Utilize our GST Global Standards Barcode to accurately identify your products. Trusted by over 2 million companies worldwide.",
+      link: "https://gstsa1.org/"
+    },
+    {
+      id: 15,
+      title: "Facility Management System (FMS)",
+      category: "Web Development",
+      image: "https://images.unsplash.com/photo-1624927637280-f033784c1279?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      client: "Gtrack",
+      description: "Facility Management System (FMS) is a web application for tracking and managing facilities, assets, and equipment. It provides real-time location updates, status monitoring, and reporting features.",
+      link: "http://fms.gtrack.online/"
+    },
+    {
+      id: 16,
+      title: "Pakardi",
+      category: "E-commerce",
+      image: "https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // New Unsplash image
+      client: "Pakardi",
+      description: "Pakardi is a modern e-commerce platform offering a wide range of products with a seamless shopping experience.",
+      link: "http://pakardi.com/"
+    },
+    {
+      id: 17,
+      title: "Podmap",
+      category: "UI/UX Design",
+      image: "https://codecue.solutions/wp-content/uploads/2023/02/571471159511235.Y3JvcCwzNDA5LDI2NjcsMjk1LDA.webp",
+      client: "Podmap",
+      description: "Podmap is a modern UI/UX project focused on intuitive mapping and navigation experiences.",
+      link: "https://podmaps.com"
+    },
   ];
 
   // Filter projects based on active category
@@ -165,11 +200,10 @@ const Portfolio = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`px-6 py-2 rounded-full text-sm font-medium transition ${
-                    activeCategory === category
-                      ? "bg-primary text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
-                  }`}
+                  className={`px-6 py-2 rounded-full text-sm font-medium transition ${activeCategory === category
+                    ? "bg-primary text-white"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+                    }`}
                   onClick={() => setActiveCategory(category)}
                 >
                   {category}
@@ -214,8 +248,10 @@ const Portfolio = () => {
                         Client: {project.client}
                       </span>
                       <a
-                        href={`/portfolio/${project.id}`}
+                        href={project.link ? project.link : `/portfolio/${project.id}`}
                         className="inline-block font-medium text-primary hover:underline"
+                        target={project.link ? "_blank" : undefined}
+                        rel={project.link ? "noopener noreferrer" : undefined}
                       >
                         View Details →
                       </a>
@@ -256,8 +292,8 @@ const Portfolio = () => {
                   View More Work
                 </Button> */}
                 <Link to="/contact" className="inline-block bg-white text-primary hover:bg-white/90 px-4 py-2 rounded font-medium text-center">
-          Contact Us Now
-        </Link>
+                  Contact Us Now
+                </Link>
               </div>
             </div>
           </div>
