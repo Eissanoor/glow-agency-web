@@ -37,7 +37,8 @@ const Footer = () => {
                 i
               </a>
               <a
-                href="#"
+              target="_blank"
+                href="https://www.linkedin.com/company/e-z-tech-solution"
                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"
               >
                 <span className="sr-only">LinkedIn</span>
