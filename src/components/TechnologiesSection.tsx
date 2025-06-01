@@ -20,7 +20,13 @@ import {
   SiGooglechrome,
   SiPhp,
   SiBootstrap,
+  SiTypescript,
   SiAngular,
+  SiWoocommerce,
+  SiPython,
+  SiMysql,
+  SiGraphql,
+  SiLaravel,
 } from "react-icons/si";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import { FaGitAlt } from "react-icons/fa";
@@ -37,23 +43,32 @@ const TechnologiesSection = () => {
       name: "Web Platform",
       technologies: [
         { name: "JavaScript", icon: <SiJavascript className="w-12 h-12 text-yellow-500" /> },
+        {name: "TypeScript", icon: <SiTypescript className="w-12 h-12 text-blue-500" />},
         { name: "React JS", icon: <SiReact className="w-12 h-12 text-blue-500" /> },
         { name: "Next.js", icon: <SiNextdotjs className="w-12 h-12 text-black dark:text-white" /> },
         { name: "Node.js", icon: <SiNodedotjs className="w-12 h-12 text-green-600" /> },
         { name: "WordPress", icon: <SiWordpress className="w-12 h-12 text-blue-600" /> },
+        { name: "WooCommerce", icon: <SiWoocommerce className="w-20 h-20" /> },
         { name: "Bootstrap", icon: <SiBootstrap className="w-12 h-12 text-purple-600" /> },
         { name: "AngularJS", icon: <SiAngular className="w-12 h-12 text-red-600" /> },
         { name: "Vue.js", icon: <FaVuejs className="w-12 h-12 text-green-500" /> },
-      ],
+        { name: "Laravel", icon: <SiLaravel className="w-12 h-12 text-red-500" /> },
+        { name: "Python", icon: <SiPython className="w-12 h-12 text-yellow-400" /> },
+        { name: "HeroUI", icon: <img src={`https://media.licdn.com/dms/image/v2/D4D0BAQFOOZJG95shlg/company-logo_200_200/B4DZU.5LxmG8AI-/0/1740516933102/heroui_logo?e=2147483647&v=beta&t=eK3t9ufFe15S-GtC5SE5P7uO3f4jjbCeeg7-6XN8T4I`} className="w-12 h-12" alt="HeroUI" /> },
+        { name: "MUI", icon: <img src={`https://www.remoterocketship.com/images/blog/Material%20UI-icon-for-blog.jpg`} className="w-12 h-12 text-blue-600" /> },
+        { name: "shadcn ui", icon: <img src={`https://avatars.githubusercontent.com/u/139895814?v=4`} className="w-12 h-12" alt="shadcn ui" /> },
+      ]
     },
     {
       id: "databases",
       name: "Databases",
       technologies: [
+        { name: "MySQL", icon: <SiMysql className="w-12 h-12 text-blue-600" /> },
+        { name: "MySQL Server", icon: <SiMysql className="w-12 h-12 text-orange-500" /> },
         { name: "MongoDB", icon: <SiMongodb className="w-12 h-12 text-green-500" /> },
         { name: "PostgreSQL", icon: <SiPostgresql className="w-12 h-12 text-blue-400" /> },
+        { name: "GraphQL", icon: <SiGraphql className="w-12 h-12 text-pink-600" /> },
         { name: "API", icon: <SiPostman className="w-12 h-12 text-orange-500" /> },
-        { name: "PHP", icon: <SiPhp className="w-12 h-12 text-blue-700" /> },
       ],
     },
     {

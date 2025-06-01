@@ -179,7 +179,7 @@ const Portfolio = () => {
       id: 20,
       title: "Pakardi",
       category: "E-commerce",
-      image: "https://images.unsplash.com/photo-1515169067865-5387e7c41a50?auto=format&fit=crop&w=500&q=80", // E-commerce Unsplash image
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=500", // E-commerce Unsplash image
       client: "Pakardi",
       description: "Pakardi is a modern e-commerce platform offering a wide range of products with a seamless shopping experience.",
       link: "http://pakardi.com/"
