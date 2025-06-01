@@ -69,6 +69,7 @@ const TechnologiesSection = () => {
         { name: "PostgreSQL", icon: <SiPostgresql className="w-12 h-12 text-blue-400" /> },
         { name: "GraphQL", icon: <SiGraphql className="w-12 h-12 text-pink-600" /> },
         { name: "API", icon: <SiPostman className="w-12 h-12 text-orange-500" /> },
+        { name: "PHP", icon: <SiPhp className="w-12 h-12 text-blue-700" /> },
       ],
     },
     {
