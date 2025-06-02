@@ -13,6 +13,7 @@ import Testimonials from "./pages/Testimonials";
 import Careers from "./pages/Careers";
 import NotFound from "./pages/NotFound";
 import WhatsAppIcon from "./components/WhatsAppIcon"; // Import WhatsAppIcon
+import CursorFollower from "./components/CursorFollower";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
         </Routes>
         <WhatsAppIcon /> {/* Add WhatsAppIcon here */}
       </BrowserRouter>
+      <CursorFollower />
     </TooltipProvider>
   </QueryClientProvider>
 );
