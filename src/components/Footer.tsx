@@ -16,7 +16,8 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+              target="_blank"
+                href="https://web.facebook.com/people/EZ-Tech-solution/61577069275783/"
                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"
               >
                 <span className="sr-only">Facebook</span>
